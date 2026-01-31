@@ -20,7 +20,7 @@ export default function ImportantDatesPage() {
                     title="Conference Timeline"
                     subtitle="Plan your submission and participation according to these important milestones"
                 />
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-7xl mx-auto px-4">
                     <ImportantDatesTimeline />
                 </div>
             </SectionContainer>
