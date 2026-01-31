@@ -4,29 +4,29 @@ import TrackCard from '../components/tracks/TrackCard';
 import Button from '../components/ui/Button';
 import { ROUTES } from '../constants/routes';
 
+import HeroSection from '../components/home/HeroSection';
+
 export default function TracksPage() {
     return (
         <>
             {/* Page Header */}
-            <div style={{ backgroundColor: '#1a4731' }} className="py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 style={{ color: '#ffffff' }} className="text-4xl md:text-5xl font-bold mb-4">Call for Papers</h1>
-                    <p style={{ color: '#9ca3af' }} className="text-xl max-w-3xl">
-                        Submit your research across our diverse range of conference tracks covering functional management and specialized interdisciplinary areas.
-                    </p>
-                </div>
-            </div>
+            <HeroSection
+                title="Call for Papers"
+                subtitle="Submit your research across our diverse range of conference tracks covering functional management and specialized interdisciplinary areas."
+            />
 
             {/* Functional Management Tracks */}
-            <SectionContainer background="white">
+            <SectionContainer background="white" className="border-b border-gray-100">
                 <SectionHeader
                     title="Functional Management Tracks"
                     subtitle="Core management disciplines exploring digital transformation"
-                    centered={false}
+                    centered={true}
                 />
-                <div className="grid md:grid-cols-2 gap-4">
-                    {functionalTracks.map((track) => (
-                        <TrackCard key={track.id} track={track} variant="functional" />
+                <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto px-4">
+                    {functionalTracks.map((track, index) => (
+                        <div key={track.id} className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] flex">
+                            <TrackCard track={track} variant="functional" index={index} />
+                        </div>
                     ))}
                 </div>
             </SectionContainer>
@@ -36,11 +36,13 @@ export default function TracksPage() {
                 <SectionHeader
                     title="Specialized & Interdisciplinary Tracks"
                     subtitle="Cutting-edge research areas at the intersection of technology and sustainability"
-                    centered={false}
+                    centered={true}
                 />
-                <div className="grid md:grid-cols-2 gap-4">
-                    {specializedTracks.map((track) => (
-                        <TrackCard key={track.id} track={track} variant="specialized" />
+                <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto px-4">
+                    {specializedTracks.map((track, index) => (
+                        <div key={track.id} className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] flex">
+                            <TrackCard track={track} variant="specialized" index={index} />
+                        </div>
                     ))}
                 </div>
             </SectionContainer>

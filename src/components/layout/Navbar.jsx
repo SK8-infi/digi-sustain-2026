@@ -1,9 +1,30 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { NAV_ITEMS, ROUTES } from '../../constants/routes';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    // Check if any item in the 'More' dropdown is active
+    const isMoreActive = NAV_ITEMS.slice(7).some(item => location.pathname === item.path);
+
+    const handleSmoothScrollNav = (e, path) => {
+        e.preventDefault();
+
+        // 1. Start Scroll
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+        // 2. Change Content (after short delay to allow scroll to start visually)
+        setTimeout(() => {
+            navigate(path);
+            setIsMenuOpen(false);
+        }, 300);
+    };
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-md">
@@ -23,7 +44,11 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-12">
                         {/* Logo - Smaller */}
-                        <Link to={ROUTES.HOME} className="flex items-center gap-2">
+                        <Link
+                            to={ROUTES.HOME}
+                            onClick={(e) => handleSmoothScrollNav(e, ROUTES.HOME)}
+                            className="flex items-center gap-2"
+                        >
                             <div
                                 style={{ backgroundColor: '#1a4731' }}
                                 className="w-7 h-7 rounded-full flex items-center justify-center"
@@ -42,11 +67,15 @@ export default function Navbar() {
                                 <NavLink
                                     key={item.path}
                                     to={item.path}
+                                    onClick={(e) => handleSmoothScrollNav(e, item.path)}
                                     className={({ isActive }) =>
-                                        `text-sm font-medium tracking-wide uppercase transition-colors`
+                                        `text-xs font-medium tracking-wide uppercase transition-all duration-200`
                                     }
                                     style={({ isActive }) => ({
-                                        color: isActive ? '#1a4731' : '#525252'
+                                        color: isActive ? '#1a4731' : '#525252',
+                                        fontWeight: isActive ? '700' : '500',
+                                        borderBottom: isActive ? '2px solid #1a4731' : '2px solid transparent',
+                                        paddingBottom: '2px'
                                     })}
                                 >
                                     {item.label}
@@ -54,27 +83,34 @@ export default function Navbar() {
                             ))}
 
                             {/* More dropdown */}
-                            <div className="relative group">
+                            <div className="relative group h-full flex items-center">
                                 <button
-                                    style={{ color: '#525252' }}
-                                    className="text-sm font-medium tracking-wide uppercase transition-colors flex items-center gap-1 hover:opacity-80"
+                                    style={{
+                                        color: isMoreActive ? '#1a4731' : '#525252',
+                                        fontWeight: isMoreActive ? '700' : '500',
+                                        borderBottom: isMoreActive ? '2px solid #1a4731' : '2px solid transparent',
+                                        paddingBottom: '2px'
+                                    }}
+                                    className="text-xs font-medium tracking-wide uppercase transition-all duration-200 flex items-center gap-1 hover:opacity-80"
                                 >
                                     More
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </button>
                                 <div
                                     style={{ border: '1px solid #e5e7eb' }}
-                                    className="absolute right-0 mt-2 w-48 bg-white rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+                                    className="absolute right-0 top-10 mt-1 w-48 bg-white rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
                                 >
                                     {NAV_ITEMS.slice(7).map((item) => (
                                         <NavLink
                                             key={item.path}
                                             to={item.path}
-                                            className="block px-4 py-2 text-sm"
+                                            onClick={(e) => handleSmoothScrollNav(e, item.path)}
+                                            className="block px-4 py-2 text-[13px] uppercase tracking-wider transition-colors"
                                             style={({ isActive }) => ({
                                                 color: isActive ? '#1a4731' : '#525252',
+                                                fontWeight: isActive ? '700' : '500',
                                                 backgroundColor: isActive ? '#f0f5f2' : 'transparent'
                                             })}
                                         >
@@ -109,11 +145,13 @@ export default function Navbar() {
                                     <NavLink
                                         key={item.path}
                                         to={item.path}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="px-4 py-2 text-sm font-medium"
+                                        onClick={(e) => handleSmoothScrollNav(e, item.path)}
+                                        className="px-4 py-3 text-sm font-medium transition-colors border-l-4"
                                         style={({ isActive }) => ({
                                             color: isActive ? '#1a4731' : '#525252',
-                                            backgroundColor: isActive ? '#f0f5f2' : 'transparent'
+                                            fontWeight: isActive ? '700' : '500',
+                                            backgroundColor: isActive ? '#f0f5f2' : 'transparent',
+                                            borderColor: isActive ? '#1a4731' : 'transparent'
                                         })}
                                     >
                                         {item.label}
