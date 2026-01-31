@@ -67,15 +67,15 @@ export default function Footer() {
                                 <p style={{ color: '#ffffff' }} className="font-medium mb-1">Email</p>
                                 <a
                                     href={`mailto:${contactPerson.email}`}
-                                    style={{ color: '#60a5fa' }}
-                                    className="hover:underline"
+                                    style={{ color: '#ffffff' }}
+                                    className="hover:text-green-300 transition-colors"
                                 >
                                     {contactPerson.email}
                                 </a>
                             </div>
                             <div>
                                 <p style={{ color: '#ffffff' }} className="font-medium mb-1">Phone</p>
-                                <p style={{ color: '#60a5fa' }}>
+                                <p style={{ color: '#ffffff' }}>
                                     {contactPerson.phones.join(' | ')}
                                 </p>
                             </div>
@@ -87,14 +87,14 @@ export default function Footer() {
                 <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
                         <div>
-                            <p style={{ color: '#6b7280' }} className="uppercase tracking-wider text-xs mb-1">ORGANIZED BY</p>
-                            <p style={{ color: '#9ca3af' }} className="underline">
+                            <p style={{ color: '#88a396' }} className="uppercase tracking-wider text-xs mb-1">ORGANIZED BY</p>
+                            <p style={{ color: '#ffffff' }}>
                                 Department of Management Studies (DoMS), ABV-IIITM Gwalior
                             </p>
                         </div>
                         <div>
-                            <p style={{ color: '#6b7280' }} className="uppercase tracking-wider text-xs mb-1">CONFERENCE DATES</p>
-                            <p style={{ color: '#60a5fa' }}>
+                            <p style={{ color: '#88a396' }} className="uppercase tracking-wider text-xs mb-1">CONFERENCE DATES</p>
+                            <p style={{ color: '#ffffff' }}>
                                 {conferenceInfo.dates}
                             </p>
                         </div>
@@ -113,8 +113,8 @@ export default function Footer() {
                             href="https://iiitm.ac.in"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: '#60a5fa' }}
-                            className="hover:underline"
+                            style={{ color: '#ffffff' }}
+                            className="hover:text-green-300 transition-colors"
                         >
                             ABV-IIITM Gwalior
                         </a>

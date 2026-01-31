@@ -6,10 +6,10 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="bg-white sticky top-0 z-50">
-            {/* Top bar */}
-            <div style={{ backgroundColor: '#1a4731' }} className="py-2">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
+        <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-md">
+            {/* Top bar - Tiny version */}
+            <div style={{ backgroundColor: '#1a4731' }} className="py-1">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[10px] md:text-xs">
                     <span style={{ color: '#ffffff' }}>15–17 May 2026</span>
                     <span style={{ color: '#ffffff' }} className="hidden sm:inline">ABV-IIITM Gwalior, India</span>
                     <a href="mailto:shishir@iiitm.ac.in" style={{ color: '#ffffff' }} className="hover:underline">
@@ -18,21 +18,21 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Main navbar */}
-            <nav style={{ borderBottom: '1px solid #e5e7eb' }}>
+            {/* Main navbar - Tiny version */}
+            <nav style={{ borderBottom: '1px solid rgba(229, 231, 235, 0.5)' }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
-                        {/* Logo */}
-                        <Link to={ROUTES.HOME} className="flex items-center gap-3">
+                    <div className="flex justify-between items-center h-12">
+                        {/* Logo - Smaller */}
+                        <Link to={ROUTES.HOME} className="flex items-center gap-2">
                             <div
                                 style={{ backgroundColor: '#1a4731' }}
-                                className="w-10 h-10 rounded-full flex items-center justify-center"
+                                className="w-7 h-7 rounded-full flex items-center justify-center"
                             >
-                                <span style={{ color: '#ffffff' }} className="font-bold text-sm">DS</span>
+                                <span style={{ color: '#ffffff' }} className="font-bold text-[10px]">DS</span>
                             </div>
                             <div>
-                                <span style={{ color: '#1a4731' }} className="font-semibold text-lg tracking-tight">DIGI-SUSTAIN</span>
-                                <span style={{ color: '#737373' }} className="font-normal text-lg ml-1">2026</span>
+                                <span style={{ color: '#1a4731' }} className="font-semibold text-sm tracking-tight">DIGI-SUSTAIN</span>
+                                <span style={{ color: '#737373' }} className="font-normal text-sm ml-1">2026</span>
                             </div>
                         </Link>
 

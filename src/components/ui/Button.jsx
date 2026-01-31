@@ -12,11 +12,13 @@ export default function Button({
     const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
 
     const variants = {
-        primary: 'bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-500 shadow-sm',
-        secondary: 'bg-white text-primary-700 border-2 border-primary-700 hover:bg-primary-50 focus:ring-primary-500',
-        outline: 'bg-transparent text-primary-700 border border-primary-300 hover:border-primary-500 hover:bg-primary-50 focus:ring-primary-500',
-        ghost: 'bg-transparent text-primary-700 hover:bg-primary-50 focus:ring-primary-500',
+        primary: 'text-white shadow-sm hover:opacity-90',
+        secondary: 'bg-white border-2 text-primary-700 border-primary-700 hover:bg-primary-50',
+        outline: 'bg-transparent text-primary-700 border border-primary-300 hover:border-primary-500 hover:bg-primary-50',
+        ghost: 'bg-transparent text-primary-700 hover:bg-primary-50',
     };
+
+    const explicitStyles = variant === 'primary' ? { backgroundColor: '#1a4731', color: '#ffffff' } : {};
 
     const sizes = {
         sm: 'px-3 py-1.5 text-sm',
@@ -29,7 +31,7 @@ export default function Button({
     // External link
     if (href) {
         return (
-            <a href={href} className={classes} {...props}>
+            <a href={href} className={classes} style={explicitStyles} {...props}>
                 {children}
             </a>
         );
@@ -38,7 +40,7 @@ export default function Button({
     // Internal link
     if (to) {
         return (
-            <Link to={to} className={classes} {...props}>
+            <Link to={to} className={classes} style={explicitStyles} {...props}>
                 {children}
             </Link>
         );
@@ -46,7 +48,7 @@ export default function Button({
 
     // Button
     return (
-        <button className={classes} {...props}>
+        <button className={classes} style={explicitStyles} {...props}>
             {children}
         </button>
     );

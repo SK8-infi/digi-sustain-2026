@@ -23,36 +23,36 @@ export default function IntroSection() {
             </div>
 
             {/* Quick Info Cards */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
                 {/* Important Dates Preview */}
-                <Card className="md:col-span-2">
+                <Card className="md:col-span-2 flex flex-col h-full">
                     <CardTitle>Key Dates</CardTitle>
                     <CardDescription>Mark your calendar for these important deadlines</CardDescription>
-                    <div className="mt-4 space-y-3">
+                    <div className="mt-6 space-y-4 flex-1">
                         {previewDates.map((item, index) => (
                             <div
                                 key={index}
                                 className="flex justify-between items-center py-2 border-b border-neutral-100 last:border-0"
                             >
-                                <span className="text-neutral-700">{item.activity}</span>
-                                <span className={`font-semibold ${item.isDeadline ? 'text-primary-700' : 'text-neutral-600'}`}>
+                                <span className="text-neutral-700 font-medium">{item.activity}</span>
+                                <span style={{ color: '#1a4731' }} className="font-semibold text-right">
                                     {item.date}
                                 </span>
                             </div>
                         ))}
                     </div>
-                    <div className="mt-4">
-                        <Button to={ROUTES.IMPORTANT_DATES} variant="ghost" size="sm">
+                    <div className="mt-8 pt-4 border-t border-neutral-50">
+                        <Button to={ROUTES.IMPORTANT_DATES} variant="ghost" size="sm" className="!p-0 hover:bg-transparent">
                             View All Dates →
                         </Button>
                     </div>
                 </Card>
 
                 {/* Brochure Download */}
-                <Card className="bg-primary-50 border-primary-100">
-                    <div className="flex flex-col items-center text-center h-full justify-center py-4">
-                        <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
-                            <svg className="w-8 h-8 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <Card className="bg-primary-50 border-primary-100 flex flex-col h-full">
+                    <div className="flex flex-col items-center text-center h-full justify-center py-8">
+                        <div style={{ backgroundColor: '#1a4731' }} className="w-16 h-16 rounded-full flex items-center justify-center mb-6 text-white shadow-sm">
+                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
                         </div>
@@ -61,10 +61,9 @@ export default function IntroSection() {
                         <Button
                             href="#"
                             variant="primary"
-                            size="sm"
-                            className="mt-4"
+                            size="md"
+                            className="mt-6"
                         >
-                            {/* BROCHURE_DOWNLOAD_PLACEHOLDER */}
                             Download PDF
                         </Button>
                     </div>
@@ -106,7 +105,7 @@ export default function IntroSection() {
                 <HighlightCard
                     icon={
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
                         </svg>
                     }
                     title="Best Paper Award"
@@ -120,15 +119,15 @@ export default function IntroSection() {
 
 function HighlightCard({ icon, title, description, link }) {
     return (
-        <Link to={link} className="group">
-            <Card className="h-full text-center group-hover:border-primary-200 transition-colors">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4 text-primary-700 group-hover:bg-primary-200 transition-colors">
+        <Link to={link} className="group h-full">
+            <Card className="h-full text-center group-hover:border-primary-200 transition-colors flex flex-col items-center">
+                <div style={{ backgroundColor: '#f0f5f2' }} className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 text-primary-700 group-hover:bg-primary-200 transition-colors">
                     {icon}
                 </div>
                 <CardTitle className="group-hover:text-primary-700 transition-colors">
                     {title}
                 </CardTitle>
-                <CardDescription>{description}</CardDescription>
+                <CardDescription className="flex-1">{description}</CardDescription>
             </Card>
         </Link>
     );
