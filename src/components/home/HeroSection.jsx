@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import { conferenceInfo } from '../../data/conferenceData';
 import { ROUTES } from '../../constants/routes';
 
-// Carousel images - replace these paths with actual images
+// Carousel images - Strictly 4 images as requested
 const carouselImages = [
-    { id: 1, placeholder: 'CAROUSEL_IMAGE_1', alt: 'Conference venue' },
-    { id: 2, placeholder: 'CAROUSEL_IMAGE_2', alt: 'Academic session' },
-    { id: 3, placeholder: 'CAROUSEL_IMAGE_3', alt: 'Research presentation' },
-    { id: 4, placeholder: 'CAROUSEL_IMAGE_4', alt: 'Networking event' },
-    { id: 5, placeholder: 'CAROUSEL_IMAGE_5', alt: 'IIITM Gwalior campus' },
+    { id: 1, url: 'https://lh3.googleusercontent.com/d/1OoQlP6Ucwi-7L4Oe_0Sl8TCAu8urbm2w', alt: 'Conference venue' },
+    { id: 2, url: 'https://lh3.googleusercontent.com/d/1AczsTl9ZAEC0j4xj6NSey5ml9YsMBISh', alt: 'Academic session' },
+    { id: 3, url: 'https://lh3.googleusercontent.com/d/1sWTOeNuVDQxUhysQfr9DS6z9aJ5Lypj5', alt: 'Research presentation' },
+    { id: 4, url: 'https://lh3.googleusercontent.com/d/1VLlXYXdBr70atzRCrsMBGfmu9E0fOruO', alt: 'Networking event' },
 ];
 
 export default function HeroSection() {
@@ -42,37 +41,36 @@ export default function HeroSection() {
                 {carouselImages.map((image, index) => (
                     <div
                         key={image.id}
-                        className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
                             }`}
                     >
-                        {/* Placeholder background */}
-                        <div className="w-full h-full bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-300 flex items-center justify-center">
-                            <span className="text-neutral-500 text-lg font-medium tracking-wider">
-                                {image.placeholder}
-                            </span>
-                        </div>
+                        <img
+                            src={image.url}
+                            alt={image.alt}
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                 ))}
             </div>
 
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-black/40" />
+            {/* Dark overlay for text readability - Enhanced shadow/overlay */}
+            <div className="absolute inset-0 bg-black/60" />
 
             {/* Content Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-4 max-w-4xl">
                     {/* Small label */}
-                    <p className="text-sm uppercase tracking-[0.2em] mb-4 text-white/80">
+                    <p style={{ color: '#ffffff' }} className="text-sm md:text-base uppercase tracking-[0.2em] mb-4 font-semibold">
                         {conferenceInfo.dates} • {conferenceInfo.venue.shortName}
                     </p>
 
                     {/* Main Title */}
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-4 leading-tight">
+                    <h1 style={{ color: '#ffffff' }} className="text-4xl md:text-5xl lg:text-6xl font-light mb-4 leading-tight">
                         {conferenceInfo.shortTitle}
                     </h1>
 
                     {/* Subtitle */}
-                    <p className="text-lg md:text-xl font-light mb-8 text-white/90 max-w-2xl mx-auto">
+                    <p style={{ color: '#e5e7eb' }} className="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto">
                         {conferenceInfo.theme}
                     </p>
 
@@ -80,13 +78,15 @@ export default function HeroSection() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             to={ROUTES.REGISTRATION}
-                            className="inline-flex items-center justify-center px-8 py-3 bg-white text-primary-700 font-medium rounded hover:bg-neutral-100 transition-colors"
+                            style={{ color: '#1a4731', backgroundColor: '#ffffff' }}
+                            className="inline-flex items-center justify-center px-8 py-3 font-medium rounded hover:bg-neutral-100 transition-colors"
                         >
                             Register Now
                         </Link>
                         <Link
                             to={ROUTES.TRACKS}
-                            className="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium rounded hover:bg-white/10 transition-colors"
+                            style={{ color: '#ffffff', borderColor: '#ffffff' }}
+                            className="inline-flex items-center justify-center px-8 py-3 border-2 font-medium rounded hover:bg-white/10 transition-colors"
                         >
                             Submit Abstract
                         </Link>
@@ -94,10 +94,10 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            {/* Carousel Navigation Arrows */}
+            {/* Carousel Navigation Arrows - Hidden on mobile, shown on md and up */}
             <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 hidden md:flex items-center justify-center text-white/70 hover:text-white transition-colors focus:outline-none"
                 aria-label="Previous slide"
             >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ export default function HeroSection() {
             </button>
             <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 hidden md:flex items-center justify-center text-white/70 hover:text-white transition-colors focus:outline-none"
                 aria-label="Next slide"
             >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,15 +114,15 @@ export default function HeroSection() {
                 </svg>
             </button>
 
-            {/* Carousel Dots */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+            {/* Carousel Dots - Will only show 4 dots now */}
+            <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
                 {carouselImages.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
-                        className={`w-2 h-2 rounded-full transition-all ${index === currentSlide
-                                ? 'bg-white w-6'
-                                : 'bg-white/50 hover:bg-white/70'
+                        className={`w-2 h-2 rounded-full transition-all focus:outline-none ${index === currentSlide
+                            ? 'bg-white w-6'
+                            : 'bg-white/50 hover:bg-white/70'
                             }`}
                         aria-label={`Go to slide ${index + 1}`}
                     />
