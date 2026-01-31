@@ -1,69 +1,137 @@
 import Card from '../ui/Card';
 
 export default function CommitteeGrid({ title, members, layout = 'grid' }) {
+    // White Theme + Dark Text
+    const cardStyle = "bg-white border border-neutral-200 shadow-sm transition-shadow duration-300";
+
     if (layout === 'single') {
-        // For single member (Patron, Chair, etc.)
         const member = members;
         return (
-            <div className="mb-12">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-4 pb-2 border-b border-primary-200">
+            <div className="mb-0 w-full h-full flex flex-col">
+                <h3 className="text-base md:text-xl font-semibold text-neutral-900 mb-2 md:mb-4 pb-1 md:pb-2 border-b border-primary-200 min-h-[4rem] md:min-h-[4.5rem] flex items-end justify-center text-center">
                     {title}
                 </h3>
-                <Card className="inline-block">
-                    <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 font-bold text-xl">
-                            {getInitials(member.name)}
+
+                {/* Responsive Width: Scales with grid container */}
+                <div
+                    className={`w-full overflow-hidden ${cardStyle} flex-grow flex flex-col justify-center`}
+                    style={{
+                        borderRadius: 'clamp(1rem, 3vw, 2rem)',
+                        // No max-width restriction to fill the grid cell
+                    }}
+                >
+                    <div
+                        className="flex flex-col items-center text-center"
+                        style={{
+                            padding: 'clamp(1rem, 3vw, 2rem)',
+                            gap: 'clamp(0.5rem, 2vw, 1rem)'
+                        }}
+                    >
+                        {/* Round Image: Relative Size */}
+                        <div
+                            className="bg-primary-50 rounded-full flex items-center justify-center text-primary-300 font-bold overflow-hidden shadow-inner border border-primary-100"
+                            style={{
+                                width: 'clamp(4rem, 20vw, 9rem)',
+                                height: 'clamp(4rem, 20vw, 9rem)',
+                                fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+                                borderRadius: '50%'
+                            }}
+                        >
+                            {member.image ? (
+                                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                            ) : (
+                                getInitials(member.name)
+                            )}
                         </div>
-                        <div>
-                            <h4 className="text-lg font-semibold text-neutral-900">{member.name}</h4>
+                        <div className="w-full">
+                            <h4 className="font-bold text-neutral-900 mb-0.5" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.5rem)' }}>{member.name}</h4>
                             {member.designation && (
-                                <p className="text-primary-600 font-medium">{member.designation}</p>
+                                <p className="text-primary-700 font-semibold mb-0.5" style={{ fontSize: 'clamp(0.75rem, 2vw, 1.125rem)' }}>{member.designation}</p>
                             )}
                             {member.affiliation && (
-                                <p className="text-neutral-600 text-sm">{member.affiliation}</p>
+                                <p className="text-neutral-500 mb-1 leading-tight" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 0.9rem)' }}>{member.affiliation}</p>
                             )}
                             {member.email && (
                                 <a
                                     href={`mailto:${member.email}`}
-                                    className="text-primary-700 text-sm hover:underline"
+                                    className="text-primary-600 hover:text-primary-800 inline-flex items-center gap-1 break-all justify-center"
+                                    style={{ fontSize: 'clamp(0.65rem, 1.8vw, 0.9rem)' }}
                                 >
+                                    <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
                                     {member.email}
                                 </a>
                             )}
                         </div>
                     </div>
-                </Card>
+                </div>
             </div>
         );
     }
 
-    // For multiple members (Advisory Board, etc.)
     return (
         <div className="mb-12">
             <h3 className="text-xl font-semibold text-neutral-900 mb-6 pb-2 border-b border-primary-200">
                 {title}
             </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Grid for multiple members */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4" style={{ gap: 'clamp(0.75rem, 2vw, 1.5rem)' }}>
                 {members.map((member, index) => (
-                    <Card key={index} padding="default" className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 font-semibold shrink-0">
-                            {getInitials(member.name)}
+                    // White boxes
+                    <div
+                        key={index}
+                        className="bg-white border border-neutral-200 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                        style={{
+                            borderRadius: 'clamp(1rem, 2.5vw, 1.5rem)',
+                            padding: 'clamp(0.75rem, 2.5vw, 1.5rem)',
+                            gap: 'clamp(0.5rem, 1.5vw, 0.75rem)'
+                        }}
+                    >
+                        {/* Round Image: Relative Size */}
+                        <div
+                            className="bg-primary-50 rounded-full flex items-center justify-center text-primary-300 font-semibold shrink-0 overflow-hidden shadow-inner border border-primary-100"
+                            style={{
+                                width: 'clamp(3.5rem, 15vw, 7rem)',
+                                height: 'clamp(3.5rem, 15vw, 7rem)',
+                                fontSize: 'clamp(1rem, 2.5vw, 1.75rem)',
+                                borderRadius: '50%'
+                            }}
+                        >
+                            {member.image ? (
+                                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                            ) : (
+                                getInitials(member.name)
+                            )}
                         </div>
-                        <div className="min-w-0">
-                            <h4 className="font-semibold text-neutral-900 truncate">{member.name}</h4>
+                        <div className="min-w-0 w-full flex flex-col items-center flex-grow">
+                            <h4
+                                className="font-bold text-neutral-900 mb-0.5 leading-tight"
+                                style={{ fontSize: 'clamp(0.8rem, 2.2vw, 1.25rem)' }}
+                            >
+                                {member.name}
+                            </h4>
                             {member.affiliation && (
-                                <p className="text-neutral-600 text-sm truncate">{member.affiliation}</p>
-                            )}
-                            {member.email && (
-                                <a
-                                    href={`mailto:${member.email}`}
-                                    className="text-primary-700 text-sm hover:underline truncate block"
+                                <p
+                                    className="leading-snug mb-1 line-clamp-2 text-neutral-500"
+                                    style={{ fontSize: 'clamp(0.65rem, 1.8vw, 0.9rem)' }}
                                 >
-                                    {member.email}
-                                </a>
+                                    {member.affiliation}
+                                </p>
                             )}
+                            <div className="mt-auto">
+                                {member.email && (
+                                    <a
+                                        href={`mailto:${member.email}`}
+                                        className="text-primary-600 hover:text-primary-800 truncate block hover:underline"
+                                        style={{ fontSize: 'clamp(0.6rem, 1.6vw, 0.85rem)' }}
+                                    >
+                                        {member.email}
+                                    </a>
+                                )}
+                            </div>
                         </div>
-                    </Card>
+                    </div>
                 ))}
             </div>
         </div>
@@ -71,6 +139,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
 }
 
 function getInitials(name) {
+    if (!name) return '';
     return name
         .split(' ')
         .filter(word => !['Dr.', 'Prof.', 'Mr.', 'Mrs.', 'Ms.'].includes(word))

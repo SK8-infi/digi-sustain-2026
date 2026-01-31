@@ -22,12 +22,13 @@ export default function CommitteePage() {
                         subtitle="Distinguished academics guiding the conference"
                     />
 
-                    <div className="grid lg:grid-cols-2 gap-8">
+                    {/* Forced Side-by-Side Grid for ALL screens */}
+                    <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8">
                         <CommitteeGrid title="Patron" members={patron} layout="single" />
                         <CommitteeGrid title="Conference Chair" members={conferenceChair} layout="single" />
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-2 gap-4 md:gap-8">
                         <CommitteeGrid title="Conference Coordinator" members={coordinator} layout="single" />
                         <CommitteeGrid title="Conference Convenor" members={convenor} layout="single" />
                     </div>
