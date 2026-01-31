@@ -27,20 +27,18 @@ export default function Navbar() {
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-md">
+        <header className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
             {/* Top bar - Tiny version */}
             <div style={{ backgroundColor: '#1a4731' }} className="py-1">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[10px] md:text-xs">
-                    <span style={{ color: '#ffffff' }}>15–17 May 2026</span>
-                    <span style={{ color: '#ffffff' }} className="hidden sm:inline">ABV-IIITM Gwalior, India</span>
-                    <a href="mailto:shishir@iiitm.ac.in" style={{ color: '#ffffff' }} className="hover:underline">
-                        Contact Us
-                    </a>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[10px] md:text-xs text-white">
+                    <span>15–17 May 2026</span>
+                    <span className="hidden sm:inline text-white/90">ABV-IIITM Gwalior, India</span>
+                    <a href="mailto:shishir@iiitm.ac.in" className="hover:underline">Contact Us</a>
                 </div>
             </div>
 
             {/* Main navbar - Tiny version */}
-            <nav style={{ borderBottom: '1px solid rgba(229, 231, 235, 0.5)' }}>
+            <nav>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-12">
                         {/* Logo - Smaller */}
@@ -53,11 +51,11 @@ export default function Navbar() {
                                 style={{ backgroundColor: '#1a4731' }}
                                 className="w-7 h-7 rounded-full flex items-center justify-center"
                             >
-                                <span style={{ color: '#ffffff' }} className="font-bold text-[10px]">DS</span>
+                                <span className="text-white font-bold text-[10px]">DS</span>
                             </div>
                             <div>
                                 <span style={{ color: '#1a4731' }} className="font-semibold text-sm tracking-tight">DIGI-SUSTAIN</span>
-                                <span style={{ color: '#737373' }} className="font-normal text-sm ml-1">2026</span>
+                                <span className="text-gray-500 font-normal text-sm ml-1">2026</span>
                             </div>
                         </Link>
 
@@ -98,10 +96,7 @@ export default function Navbar() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </button>
-                                <div
-                                    style={{ border: '1px solid #e5e7eb' }}
-                                    className="absolute right-0 top-10 mt-1 w-48 bg-white rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-                                >
+                                <div className="absolute right-0 top-10 mt-1 w-48 bg-white rounded shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                     {NAV_ITEMS.slice(7).map((item) => (
                                         <NavLink
                                             key={item.path}
@@ -124,8 +119,7 @@ export default function Navbar() {
                         {/* Mobile menu button */}
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            style={{ color: '#525252' }}
-                            className="lg:hidden p-2"
+                            className="lg:hidden p-2 text-gray-500"
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 {isMenuOpen ? (
@@ -139,7 +133,7 @@ export default function Navbar() {
 
                     {/* Mobile Navigation */}
                     {isMenuOpen && (
-                        <div style={{ borderTop: '1px solid #e5e7eb' }} className="lg:hidden py-4">
+                        <div className="lg:hidden py-4 border-t border-gray-100 bg-white shadow-xl rounded-b-xl">
                             <div className="flex flex-col gap-1">
                                 {NAV_ITEMS.map((item) => (
                                     <NavLink

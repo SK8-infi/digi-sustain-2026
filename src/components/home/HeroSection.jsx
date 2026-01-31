@@ -16,11 +16,20 @@ export default function HeroSection({
     subtitle,
     isHomePage = false
 }) {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(() => {
+        const saved = localStorage.getItem('hero_current_slide');
+        const initial = parseInt(saved);
+        return isNaN(initial) ? 0 : initial % carouselImages.length;
+    });
 
     // Default values if not provided (fallback logic mainly for safety, but helpful)
     const displayTitle = title || conferenceInfo.shortTitle;
     const displaySubtitle = subtitle || conferenceInfo.theme;
+
+    // Persist current slide to localStorage
+    useEffect(() => {
+        localStorage.setItem('hero_current_slide', currentSlide.toString());
+    }, [currentSlide]);
 
     // Auto-advance slides every 5 seconds
     useEffect(() => {
