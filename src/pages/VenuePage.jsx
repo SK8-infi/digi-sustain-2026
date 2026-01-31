@@ -2,18 +2,16 @@ import { conferenceInfo, aboutInstitute } from '../data/conferenceData';
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import Card from '../components/ui/Card';
 
+import HeroSection from '../components/home/HeroSection';
+
 export default function VenuePage() {
     return (
         <>
             {/* Page Header */}
-            <div style={{ backgroundColor: '#1a4731' }} className="py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 style={{ color: '#ffffff' }} className="text-4xl md:text-5xl font-bold mb-4">Venue</h1>
-                    <p style={{ color: '#9ca3af' }} className="text-xl max-w-3xl">
-                        Join us at {conferenceInfo.venue.shortName} for DIGI-SUSTAIN 2026.
-                    </p>
-                </div>
-            </div>
+            <HeroSection
+                title="Venue"
+                subtitle={`Join us at ${conferenceInfo.venue.shortName} for DIGI-SUSTAIN 2026.`}
+            />
 
             {/* Venue Details */}
             <SectionContainer background="white">

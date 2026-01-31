@@ -1,18 +1,16 @@
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import JournalList from '../components/journals/JournalList';
 
+import HeroSection from '../components/home/HeroSection';
+
 export default function JournalsPage() {
     return (
         <>
             {/* Page Header */}
-            <div style={{ backgroundColor: '#1a4731' }} className="py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 style={{ color: '#ffffff' }} className="text-4xl md:text-5xl font-bold mb-4">Partner Journals</h1>
-                    <p style={{ color: '#9ca3af' }} className="text-xl max-w-3xl">
-                        Selected papers from DIGI-SUSTAIN 2026 may be considered for publication in our partner journals.
-                    </p>
-                </div>
-            </div>
+            <HeroSection
+                title="Partner Journals"
+                subtitle="Selected papers from DIGI-SUSTAIN 2026 may be considered for publication in our partner journals."
+            />
 
             {/* Journal List */}
             <SectionContainer background="white">

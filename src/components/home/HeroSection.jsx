@@ -11,8 +11,16 @@ const carouselImages = [
     { id: 4, url: 'https://lh3.googleusercontent.com/d/1VLlXYXdBr70atzRCrsMBGfmu9E0fOruO', alt: 'Networking event' },
 ];
 
-export default function HeroSection() {
+export default function HeroSection({
+    title,
+    subtitle,
+    isHomePage = false
+}) {
     const [currentSlide, setCurrentSlide] = useState(0);
+
+    // Default values if not provided (fallback logic mainly for safety, but helpful)
+    const displayTitle = title || conferenceInfo.shortTitle;
+    const displaySubtitle = subtitle || conferenceInfo.theme;
 
     // Auto-advance slides every 5 seconds
     useEffect(() => {
@@ -35,7 +43,7 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="relative w-full h-[70vh] min-h-[500px] max-h-[700px] overflow-hidden">
+        <section className="relative w-full overflow-hidden h-[70vh] min-h-[500px] max-h-[700px]">
             {/* Carousel Container */}
             <div className="absolute inset-0">
                 {carouselImages.map((image, index) => (
@@ -59,38 +67,40 @@ export default function HeroSection() {
             {/* Content Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-4 max-w-4xl">
-                    {/* Small label */}
+                    {/* Small label - Visible on ALL Pages now */}
                     <p style={{ color: '#ffffff' }} className="text-sm md:text-base uppercase tracking-[0.2em] mb-4 font-semibold">
                         {conferenceInfo.dates} • {conferenceInfo.venue.shortName}
                     </p>
 
                     {/* Main Title */}
                     <h1 style={{ color: '#ffffff' }} className="text-4xl md:text-5xl lg:text-6xl font-light mb-4 leading-tight">
-                        {conferenceInfo.shortTitle}
+                        {displayTitle}
                     </h1>
 
                     {/* Subtitle */}
                     <p style={{ color: '#e5e7eb' }} className="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto">
-                        {conferenceInfo.theme}
+                        {displaySubtitle}
                     </p>
 
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            to={ROUTES.REGISTRATION}
-                            style={{ color: '#1a4731', backgroundColor: '#ffffff' }}
-                            className="inline-flex items-center justify-center px-8 py-3 font-medium rounded hover:bg-neutral-100 transition-colors"
-                        >
-                            Register Now
-                        </Link>
-                        <Link
-                            to={ROUTES.TRACKS}
-                            style={{ color: '#ffffff', borderColor: '#ffffff' }}
-                            className="inline-flex items-center justify-center px-8 py-3 border-2 font-medium rounded hover:bg-white/10 transition-colors"
-                        >
-                            Submit Abstract
-                        </Link>
-                    </div>
+                    {/* CTA Buttons - Only on Home Page */}
+                    {isHomePage && (
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link
+                                to={ROUTES.REGISTRATION}
+                                style={{ color: '#1a4731', backgroundColor: '#ffffff' }}
+                                className="inline-flex items-center justify-center px-8 py-3 font-medium rounded hover:bg-neutral-100 transition-colors"
+                            >
+                                Register Now
+                            </Link>
+                            <Link
+                                to={ROUTES.TRACKS}
+                                style={{ color: '#ffffff', borderColor: '#ffffff' }}
+                                className="inline-flex items-center justify-center px-8 py-3 border-2 font-medium rounded hover:bg-white/10 transition-colors"
+                            >
+                                Submit Abstract
+                            </Link>
+                        </div>
+                    )}
                 </div>
             </div>
 

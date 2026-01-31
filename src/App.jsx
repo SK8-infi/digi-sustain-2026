@@ -12,9 +12,12 @@ import CommitteePage from './pages/CommitteePage';
 import ContactPage from './pages/ContactPage';
 import { ROUTES } from './constants/routes';
 
+import ScrollToTop from './components/layout/ScrollToTop';
+
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path={ROUTES.HOME} element={<HomePage />} />

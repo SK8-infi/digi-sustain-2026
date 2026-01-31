@@ -1,18 +1,16 @@
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import ImportantDatesTimeline from '../components/dates/ImportantDatesTimeline';
 
+import HeroSection from '../components/home/HeroSection';
+
 export default function ImportantDatesPage() {
     return (
         <>
             {/* Page Header */}
-            <div style={{ backgroundColor: '#1a4731' }} className="py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 style={{ color: '#ffffff' }} className="text-4xl md:text-5xl font-bold mb-4">Important Dates</h1>
-                    <p style={{ color: '#9ca3af' }} className="text-xl max-w-3xl">
-                        Mark your calendar with these key deadlines and dates for DIGI-SUSTAIN 2026.
-                    </p>
-                </div>
-            </div>
+            <HeroSection
+                title="Important Dates"
+                subtitle="Mark your calendar with these key deadlines and dates for DIGI-SUSTAIN 2026."
+            />
 
             {/* Timeline */}
             <SectionContainer background="white">

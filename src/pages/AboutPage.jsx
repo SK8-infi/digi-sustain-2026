@@ -2,18 +2,16 @@ import { introContent } from '../data/conferenceData';
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import Card from '../components/ui/Card';
 
+import HeroSection from '../components/home/HeroSection';
+
 export default function AboutPage() {
     return (
         <>
             {/* Page Header */}
-            <div style={{ backgroundColor: '#1a4731' }} className="py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 style={{ color: '#ffffff' }} className="text-4xl md:text-5xl font-bold mb-4">About the Conference</h1>
-                    <p style={{ color: '#e5e7eb' }} className="text-xl max-w-3xl">
-                        Learn more about DIGI-SUSTAIN 2026 and our vision for digital transformation in sustainable development.
-                    </p>
-                </div>
-            </div>
+            <HeroSection
+                title="About the Conference"
+                subtitle="Learn more about DIGI-SUSTAIN 2026 and our vision for digital transformation in sustainable development."
+            />
 
             {/* About the Conference Theme */}
             <SectionContainer background="white">

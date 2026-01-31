@@ -3,18 +3,16 @@ import { conferenceInfo } from '../data/conferenceData';
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import Card from '../components/ui/Card';
 
+import HeroSection from '../components/home/HeroSection';
+
 export default function ContactPage() {
     return (
         <>
             {/* Page Header */}
-            <div style={{ backgroundColor: '#1a4731' }} className="py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 style={{ color: '#ffffff' }} className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-                    <p style={{ color: '#9ca3af' }} className="text-xl max-w-3xl">
-                        Have questions about DIGI-SUSTAIN 2026? Get in touch with our organizing team.
-                    </p>
-                </div>
-            </div>
+            <HeroSection
+                title="Contact Us"
+                subtitle="Have questions about DIGI-SUSTAIN 2026? Get in touch with our organizing team."
+            />
 
             {/* Contact Details */}
             <SectionContainer background="white">

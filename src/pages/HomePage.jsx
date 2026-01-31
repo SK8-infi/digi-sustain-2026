@@ -4,7 +4,7 @@ import IntroSection from '../components/home/IntroSection';
 export default function HomePage() {
     return (
         <>
-            <HeroSection />
+            <HeroSection isHomePage={true} />
             <IntroSection />
         </>
     );
