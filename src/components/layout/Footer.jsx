@@ -18,21 +18,7 @@ export default function Footer() {
                             {conferenceInfo.fullTitle}
                         </p>
 
-                        {/* Badges */}
-                        <div className="flex flex-wrap gap-2 mt-4">
-                            <span
-                                style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)' }}
-                                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs"
-                            >
-                                ✓ Scopus Indexed Journals
-                            </span>
-                            <span
-                                style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)' }}
-                                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs"
-                            >
-                                ✓ ISBN Book of Abstracts
-                            </span>
-                        </div>
+
                     </div>
 
                     {/* Quick Links - Middle Column */}

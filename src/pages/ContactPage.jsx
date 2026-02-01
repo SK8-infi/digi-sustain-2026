@@ -1,5 +1,5 @@
 import { contactPerson } from '../data/committeeData';
-import { conferenceInfo } from '../data/conferenceData';
+import { conferenceInfo, aboutInstitute } from '../data/conferenceData';
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import Card from '../components/ui/Card';
 
@@ -11,12 +11,12 @@ export default function ContactPage() {
             {/* Page Header */}
             <HeroSection
                 title="Contact Us"
-                subtitle="Have questions about DIGI-SUSTAIN 2026? Get in touch with our organizing team."
+                subtitle="Have questions about DIGI-SUSTAIN 2026? Get in touch with us or visit our venue."
             />
 
             {/* Contact Details */}
             <SectionContainer background="white">
-                <div className="grid lg:grid-cols-2 gap-12">
+                <div className="grid lg:grid-cols-2 gap-12 mb-16">
                     {/* Left: Contact Info */}
                     <div>
                         <SectionHeader
@@ -78,11 +78,19 @@ export default function ContactPage() {
                                 ))}
                             </div>
                         </Card>
+                    </div>
 
-                        {/* Address */}
+                    {/* Right: Quick Venue Info (replacing small card with full details later, this is just filler/visual balance if needed, but sticking to plan) */}
+                    <div>
+                        {/* Using this space for Conference Venue Address High-level */}
+                        <SectionHeader
+                            title="Conference Venue"
+                            subtitle="Hosted at ABV-IIITM Gwalior"
+                            centered={false}
+                        />
                         <Card padding="lg">
-                            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Conference Venue</h3>
-                            <div className="flex items-start gap-3">
+                            <h3 className="text-lg font-semibold text-neutral-900 mb-4">{conferenceInfo.venue.name}</h3>
+                            <div className="flex items-start gap-3 mb-6">
                                 <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary-700 shrink-0 mt-1">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -90,17 +98,72 @@ export default function ContactPage() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="font-semibold text-neutral-900">{conferenceInfo.venue.name}</p>
-                                    <p className="text-neutral-600 mt-1">{conferenceInfo.venue.address}</p>
+                                    <p className="text-neutral-600 leading-relaxed">{conferenceInfo.venue.address}</p>
                                 </div>
                             </div>
+
+                            {/* Quick Stats from Venue Page */}
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                <QuickInfo
+                                    icon={
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    }
+                                    label="Dates"
+                                    value={conferenceInfo.dates}
+                                />
+                                <QuickInfo
+                                    icon={
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    }
+                                    label="Type"
+                                    value="Institute of National Importance"
+                                />
+                            </div>
+                        </Card>
+                    </div>
+                </div>
+
+                {/* Separator */}
+                <hr className="border-neutral-200 mb-16" />
+
+                {/* Venue Details & Map (From Venue Page) */}
+                <div className="grid lg:grid-cols-2 gap-12">
+                    {/* Left: About Institute */}
+                    <div>
+                        <SectionHeader
+                            title="About the Host Institute"
+                            centered={false}
+                        />
+
+                        {/* ABV-IIITM */}
+                        <Card className="mb-6" padding="lg">
+                            <h3 className="text-xl font-semibold text-neutral-900 mb-4 pb-2 border-b border-primary-200">
+                                {conferenceInfo.venue.name}
+                            </h3>
+                            <p className="text-neutral-700 leading-relaxed">
+                                {aboutInstitute.iiitm}
+                            </p>
+                        </Card>
+
+                        {/* DoMS */}
+                        <Card padding="lg">
+                            <h3 className="text-xl font-semibold text-neutral-900 mb-4 pb-2 border-b border-primary-200">
+                                Department of Management Studies (DoMS)
+                            </h3>
+                            <p className="text-neutral-700 leading-relaxed">
+                                {aboutInstitute.doms}
+                            </p>
                         </Card>
                     </div>
 
                     {/* Right: Map */}
                     <div>
                         <SectionHeader
-                            title="Find Us"
+                            title="Location Map"
                             centered={false}
                         />
                         <div className="rounded-xl overflow-hidden shadow-lg border border-neutral-200 h-[500px]">
@@ -119,5 +182,19 @@ export default function ContactPage() {
                 </div>
             </SectionContainer>
         </>
+    );
+}
+
+function QuickInfo({ icon, label, value }) {
+    return (
+        <div className="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg">
+            <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center text-primary-700">
+                {icon}
+            </div>
+            <div>
+                <p className="text-sm text-neutral-500">{label}</p>
+                <p className="font-semibold text-neutral-900">{value}</p>
+            </div>
+        </div>
     );
 }

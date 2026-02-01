@@ -63,6 +63,6 @@ export const advisoryBoard = [
 
 export const contactPerson = {
     name: 'Mr. Shishir Srivastava',
-    email: 'shishir@iiitm.ac.in',
+    email: 'confsect@iiitm.ac.in',
     phones: ['+91 97925 00740', '+91 86976 71630'],
 };
