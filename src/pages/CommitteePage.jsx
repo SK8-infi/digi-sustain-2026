@@ -1,4 +1,4 @@
-import { patron, conferenceChair, coordinator, convenor, advisoryBoard } from '../data/committeeData';
+import { patron, conferenceChairs, coordinators, advisoryBoard } from '../data/committeeData';
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import CommitteeGrid from '../components/committee/CommitteeGrid';
 
@@ -22,15 +22,19 @@ export default function CommitteePage() {
                         subtitle="Distinguished academics guiding the conference"
                     />
 
-                    {/* Forced Side-by-Side Grid for ALL screens */}
-                    <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8">
-                        <CommitteeGrid title="Patron" members={patron} layout="single" />
-                        <CommitteeGrid title="Conference Chair" members={conferenceChair} layout="single" />
+                    {/* Patron - Horizontal Layout */}
+                    <div className="max-w-4xl mx-auto mb-16">
+                        <CommitteeGrid title="Patron" members={patron} layout="horizontal" />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 md:gap-8">
-                        <CommitteeGrid title="Conference Coordinator" members={coordinator} layout="single" />
-                        <CommitteeGrid title="Conference Convenor" members={convenor} layout="single" />
+                    {/* Chairs - Side by Side Equal */}
+                    <div className="max-w-4xl mx-auto mb-16">
+                        <CommitteeGrid title="Conference Chairs" members={conferenceChairs} layout="grid" />
+                    </div>
+
+                    {/* Coordinators - Side by Side Equal */}
+                    <div className="max-w-4xl mx-auto">
+                        <CommitteeGrid title="Conference Coordinators" members={coordinators} layout="grid" />
                     </div>
                 </div>
             </SectionContainer>

@@ -33,16 +33,16 @@ export default function Navbar() {
                 href="https://iiitm.ac.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block border-b-2 hover:bg-gray-50/50 transition-colors"
-                style={{ backgroundColor: 'transparent', borderColor: '#1a4731' }}
+                className="block border-b-2 hover:bg-[#153d29] transition-colors"
+                style={{ backgroundColor: '#1a4731', borderColor: '#0d2619' }}
             >
-                <div className="flex items-stretch w-full min-h-[32px]">
+                <div className="flex items-center w-full min-h-[64px] py-3">
                     {/* Official Logo - Full height strip */}
                     <div
-                        className="flex-shrink-0 flex items-center justify-center px-2 sm:px-3"
-                        style={{ backgroundColor: '#1a4731' }}
+                        className="flex-shrink-0 flex items-center justify-center px-4 sm:px-6"
+                        style={{ backgroundColor: 'transparent' }}
                     >
-                        <div className="bg-white rounded-full p-[2px] w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center">
+                        <div className="bg-white rounded-full p-[3px] w-14 h-14 flex items-center justify-center shadow-lg">
                             <img
                                 src="https://lh3.googleusercontent.com/d/1LNtqXOXfvsyYZaclWSc2QM-yzpxov1vw"
                                 alt="ABV-IIITM Gwalior Logo"
@@ -52,12 +52,13 @@ export default function Navbar() {
                     </div>
 
                     {/* Text - Dynamic scaling, priority single line, graceful 2-line fallback */}
-                    <div className="flex-1 flex items-center justify-center py-1 px-1 sm:px-2 overflow-hidden">
+                    <div className="flex-1 flex items-center justify-center py-2 px-2 sm:px-4 overflow-hidden">
                         <h2
-                            className="text-gray-800 font-bold uppercase text-center leading-[1.1] w-full flex items-center justify-center"
+                            className="text-white font-black uppercase text-center leading-[1.1] w-full flex items-center justify-center"
                             style={{
-                                fontSize: 'clamp(0.5rem, 1.1vw, 1.3rem)',
-                                letterSpacing: 'clamp(0em, 0.3vw, 0.3em)'
+                                fontSize: 'clamp(0.75rem, 1.5vw, 1.75rem)', // Reduced to fit on one line
+                                letterSpacing: '0.02em', // Slightly tighter spacing to help fit
+                                color: '#ffffff'
                             }}
                         >
                             Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior
