@@ -4,6 +4,45 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
     // White Theme + Dark Text
     const cardStyle = "bg-white border border-neutral-200 shadow-sm transition-shadow duration-300";
 
+    if (layout === 'horizontal') {
+        // Specifically for Patron: Image Left, Text Right (Centered)
+        const member = members; // Should be single object
+        return (
+            <div className="mb-0 w-full flex flex-col">
+                <h3 className="text-base md:text-xl font-semibold text-neutral-900 mb-2 md:mb-4 pb-1 md:pb-2 border-b border-primary-200 min-h-[3rem] md:min-h-[3.5rem] flex items-end justify-center text-center">
+                    {title}
+                </h3>
+                <div className={`${cardStyle} rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center gap-6 text-center`}>
+                    {/* Centered Layout: Image Top */}
+                    <div
+                        className="bg-primary-50 rounded-full flex items-center justify-center text-primary-300 font-bold overflow-hidden shadow-inner border border-primary-100 flex-shrink-0"
+                        style={{
+                            width: 'clamp(6rem, 20vw, 10rem)',
+                            height: 'clamp(6rem, 20vw, 10rem)',
+                            fontSize: 'clamp(2rem, 5vw, 3rem)',
+                        }}
+                    >
+                        {member.image ? (
+                            <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                        ) : (
+                            getInitials(member.name)
+                        )}
+                    </div>
+                    {/* Text Right */}
+                    <div className="flex-grow flex flex-col items-center text-center">
+                        <h4 className="font-bold text-neutral-900 mb-1" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>{member.name}</h4>
+                        {member.designation && (
+                            <p className="text-primary-700 font-semibold mb-1" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>{member.designation}</p>
+                        )}
+                        {member.affiliation && (
+                            <p className="text-neutral-500 mb-2 text-lg">{member.affiliation}</p>
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     if (layout === 'single') {
         const member = members;
         return (
@@ -72,16 +111,15 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
 
     return (
         <div className="mb-12">
-            <h3 className="text-xl font-semibold text-neutral-900 mb-6 pb-2 border-b border-primary-200">
+            <h3 className="text-xl font-semibold text-neutral-900 mb-6 pb-2 border-b border-primary-200 min-h-[3rem] md:min-h-[3.5rem] flex items-end justify-center text-center">
                 {title}
             </h3>
-            {/* Grid for multiple members */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4" style={{ gap: 'clamp(0.75rem, 2vw, 1.5rem)' }}>
+            {/* Grid for multiple members - Using Flex for centering */}
+            <div className="flex flex-wrap justify-center" style={{ gap: 'clamp(0.75rem, 2vw, 1.5rem)' }}>
                 {members.map((member, index) => (
-                    // White boxes
                     <div
                         key={index}
-                        className="bg-white border border-neutral-200 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                        className="bg-white border border-neutral-200 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-[calc(50%-0.5rem)] md:w-[calc(50%-1rem)]"
                         style={{
                             borderRadius: 'clamp(1rem, 2.5vw, 1.5rem)',
                             padding: 'clamp(0.75rem, 2.5vw, 1.5rem)',

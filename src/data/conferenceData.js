@@ -44,12 +44,7 @@ export const importantDates = [
         isDeadline: true,
     },
     {
-        activity: 'Doctoral Colloquium',
-        date: '15 May 2026',
-        isDeadline: false,
-    },
-    {
-        activity: 'Conference Dates',
+        activity: 'Conference Dates & Doctoral Colloquium',
         date: '15–17 May 2026',
         isDeadline: false,
     },
