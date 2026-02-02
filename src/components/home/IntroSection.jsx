@@ -3,6 +3,7 @@ import { introContent, importantDates } from '../../data/conferenceData';
 import { ROUTES } from '../../constants/routes';
 import SectionContainer, { SectionHeader } from '../ui/SectionContainer';
 import Button from '../ui/Button';
+import NavLinks from '../layout/NavLinks';
 
 export default function IntroSection() {
     // Get first 3 important dates for preview
@@ -11,11 +12,23 @@ export default function IntroSection() {
 
     return (
         <SectionContainer background="white" className="relative overflow-hidden">
+            {/* Mobile/Desktop Navigation Slider - Moved above grid - Visible on All Devices */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-2 mb-6 block w-full">
+                <NavLinks
+                    layout="mobile"
+                    className=""
+                    itemClassName="!text-xs font-bold tracking-wide"
+                    enableAnimation={true}
+                />
+            </div>
+
             {/* Intro Content & Poster Grid */}
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-20 max-w-7xl mx-auto relative z-10">
                 {/* Left: Text Content - Expanded Width */}
                 <div className="lg:col-span-7 xl:col-span-8 text-left space-y-8">
                     <div className="space-y-4">
+
+
                         <SectionHeader
                             title="Welcome to DIGI-SUSTAIN 2026"
                             subtitle="Exploring Digital Innovation for a Sustainable Future"

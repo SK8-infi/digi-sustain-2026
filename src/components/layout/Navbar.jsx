@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { NAV_ITEMS, ROUTES } from '../../constants/routes';
+import NavLinks from './NavLinks';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,80 +89,32 @@ export default function Navbar() {
                             </div>
                         </Link>
 
-                        {/* Desktop Navigation */}
-                        <div className="hidden lg:flex items-center gap-6">
-                            {NAV_ITEMS.slice(0, 7).map((item) => (
-                                <NavLink
-                                    key={item.path}
-                                    to={item.path}
-                                    onClick={(e) => handleSmoothScrollNav(e, item.path)}
-                                    className={({ isActive }) =>
-                                        `text-xs font-medium tracking-wide uppercase transition-all duration-200`
-                                    }
-                                    style={({ isActive }) => ({
-                                        color: isActive ? '#1a4731' : '#525252',
-                                        fontWeight: isActive ? '700' : '500',
-                                        borderBottom: isActive ? '2px solid #1a4731' : '2px solid transparent',
-                                        paddingBottom: '2px'
-                                    })}
-                                >
-                                    {item.label}
-                                </NavLink>
-                            ))}
-
-                            {/* More dropdown */}
-                            <div className="relative group h-full flex items-center">
-                                <button
-                                    style={{
-                                        color: isMoreActive ? '#1a4731' : '#525252',
-                                        fontWeight: isMoreActive ? '700' : '500',
-                                        borderBottom: isMoreActive ? '2px solid #1a4731' : '2px solid transparent',
-                                        paddingBottom: '2px'
-                                    }}
-                                    className="text-xs font-medium tracking-wide uppercase transition-all duration-200 flex items-center gap-1 hover:opacity-80"
-                                >
-                                    More
-                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-                                <div className="absolute right-0 top-10 mt-1 w-48 bg-white rounded shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                    {NAV_ITEMS.slice(7).map((item) => (
-                                        <NavLink
-                                            key={item.path}
-                                            to={item.path}
-                                            onClick={(e) => handleSmoothScrollNav(e, item.path)}
-                                            className="block px-4 py-2 text-[13px] uppercase tracking-wider transition-colors"
-                                            style={({ isActive }) => ({
-                                                color: isActive ? '#1a4731' : '#525252',
-                                                fontWeight: isActive ? '700' : '500',
-                                                backgroundColor: isActive ? '#f0f5f2' : 'transparent'
-                                            })}
-                                        >
-                                            {item.label}
-                                        </NavLink>
-                                    ))}
-                                </div>
+                        {/* Desktop Navigation - Only show if NOT on Home page */}
+                        {location.pathname !== ROUTES.HOME && (
+                            <div className="hidden lg:flex items-center h-full">
+                                <NavLinks layout="desktop" className="gap-6" />
                             </div>
-                        </div>
+                        )}
 
-                        {/* Mobile menu button */}
-                        <button
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="lg:hidden p-2 text-gray-500"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                {isMenuOpen ? (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                ) : (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                )}
-                            </svg>
-                        </button>
+                        {/* Mobile menu button - Hide on Home Page (since we have body nav) */}
+                        {location.pathname !== ROUTES.HOME && (
+                            <button
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                className="lg:hidden p-2 text-gray-500"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    {isMenuOpen ? (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    ) : (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    )}
+                                </svg>
+                            </button>
+                        )}
                     </div>
 
-                    {/* Mobile Navigation */}
-                    {isMenuOpen && (
+                    {/* Mobile Navigation Dropdown - Only if NOT Home */}
+                    {isMenuOpen && location.pathname !== ROUTES.HOME && (
                         <div className="lg:hidden py-4 border-t border-gray-100 bg-white shadow-xl rounded-b-xl">
                             <div className="flex flex-col gap-1">
                                 {NAV_ITEMS.map((item) => (
