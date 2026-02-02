@@ -62,7 +62,7 @@ export default function NavLinks({
                     to={item.path}
                     onClick={(e) => handleSmoothScrollNav(e, item.path)}
                     className={({ isActive }) =>
-                        `text-xs font-medium tracking-wide uppercase transition-all duration-200 ${itemClassName}`
+                        `text-lg font-bold tracking-wide uppercase transition-all duration-200 ${itemClassName}`
                     }
                     style={({ isActive }) => ({
                         color: isActive ? activeColor : inactiveColor,

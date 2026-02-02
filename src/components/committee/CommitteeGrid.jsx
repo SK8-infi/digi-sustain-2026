@@ -30,12 +30,12 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                     </div>
                     {/* Text Right */}
                     <div className="flex-grow flex flex-col items-center text-center">
-                        <h4 className="font-bold text-neutral-900 mb-1" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>{member.name}</h4>
+                        <h4 className="font-bold text-neutral-900 mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>{member.name}</h4>
                         {member.designation && (
-                            <p className="text-primary-700 font-semibold mb-1" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>{member.designation}</p>
+                            <p className="text-primary-700 font-semibold mb-1" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}>{member.designation}</p>
                         )}
                         {member.affiliation && (
-                            <p className="text-neutral-500 mb-2 text-lg">{member.affiliation}</p>
+                            <p className="text-neutral-500 mb-2" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.75rem)' }}>{member.affiliation}</p>
                         )}
                     </div>
                 </div>
@@ -145,14 +145,14 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                         <div className="min-w-0 w-full flex flex-col items-center flex-grow">
                             <h4
                                 className="font-bold text-neutral-900 mb-0.5 leading-tight"
-                                style={{ fontSize: 'clamp(0.8rem, 2.2vw, 1.25rem)' }}
+                                style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
                             >
                                 {member.name}
                             </h4>
                             {member.affiliation && (
                                 <p
                                     className="leading-snug mb-1 line-clamp-2 text-neutral-500"
-                                    style={{ fontSize: 'clamp(0.65rem, 1.8vw, 0.9rem)' }}
+                                    style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}
                                 >
                                     {member.affiliation}
                                 </p>
@@ -162,7 +162,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                                     <a
                                         href={`mailto:${member.email}`}
                                         className="text-primary-600 hover:text-primary-800 truncate block hover:underline"
-                                        style={{ fontSize: 'clamp(0.6rem, 1.6vw, 0.85rem)' }}
+                                        style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)' }}
                                     >
                                         {member.email}
                                     </a>
