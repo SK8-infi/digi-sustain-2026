@@ -115,67 +115,75 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
     }
 
     return (
-        <div className="mb-4">
+        <div className="mb-4 w-full">
             {title && (
                 <h3 className="text-xl font-bold text-neutral-900 mb-6 text-center">
                     {title}
                 </h3>
             )}
-            {/* Grid for multiple members - Using Flex for centering */}
-            <div className="flex flex-wrap justify-center" style={{ gap: '1.5rem' }}>
-                {members.map((member, index) => (
-                    <div
-                        key={index}
-                        className="bg-white border border-primary-700 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-[300px] md:w-[320px]"
-                        style={{
-                            borderRadius: '1.5rem',
-                            padding: '2rem 1.5rem',
-                            gap: '0.75rem',
-                            minHeight: '280px'
-                        }}
-                    >
-                        {/* Round Image: Relative Size */}
+            {/* Flex container: Row on mobile (no wrap), Wrap on Desktop (lg) */}
+            <div className="w-full">
+                <div
+                    className="flex flex-row lg:flex-wrap justify-center"
+                    style={{
+                        gap: 'clamp(0.5rem, 2vw, 1.5rem)',
+                        width: '100%'
+                    }}
+                >
+                    {members.map((member, index) => (
                         <div
-                            className="bg-primary-50 rounded-full flex items-center justify-center text-primary-300 font-semibold shrink-0 overflow-hidden shadow-inner border border-primary-100"
+                            key={index}
+                            className="bg-white border border-primary-700 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-[47%] lg:w-[320px] flex-shrink-0 lg:flex-none min-w-0"
                             style={{
-                                width: 'clamp(3.5rem, 15vw, 7rem)',
-                                height: 'clamp(3.5rem, 15vw, 7rem)',
-                                fontSize: 'clamp(1rem, 2.5vw, 1.75rem)',
-                                borderRadius: '50%'
+                                borderRadius: '1rem',
+                                padding: '1rem 0.25rem',
+                                gap: '0.5rem',
+                                minHeight: '220px'
                             }}
                         >
-                            {member.image ? (
-                                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                            ) : (
-                                getInitials(member.name)
-                            )}
-                        </div>
-                        <div className="min-w-0 w-full flex flex-col items-center flex-grow">
-                            <h4
-                                className="font-bold text-neutral-900 mb-1 leading-tight text-xl"
+                            {/* Round Image: Relative Size */}
+                            <div
+                                className="bg-primary-50 rounded-full flex items-center justify-center text-primary-300 font-semibold shrink-0 overflow-hidden shadow-inner border border-primary-100"
+                                style={{
+                                    width: 'clamp(2.5rem, 10vw, 6rem)',
+                                    height: 'clamp(2.5rem, 10vw, 6rem)',
+                                    fontSize: 'clamp(0.875rem, 2vw, 1.5rem)',
+                                    borderRadius: '50%'
+                                }}
                             >
-                                {member.name}
-                            </h4>
-                            {member.affiliation && (
-                                <p
-                                    className="leading-snug mb-2 line-clamp-2 text-neutral-500 text-sm"
-                                >
-                                    {member.affiliation}
-                                </p>
-                            )}
-                            <div className="mt-auto">
-                                {member.email && (
-                                    <a
-                                        href={`mailto:${member.email}`}
-                                        className="text-primary-600 hover:text-primary-800 truncate block hover:underline text-sm font-medium"
-                                    >
-                                        {member.email}
-                                    </a>
+                                {member.image ? (
+                                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                                ) : (
+                                    getInitials(member.name)
                                 )}
                             </div>
+                            <div className="min-w-0 w-full flex flex-col items-center flex-grow">
+                                <h4
+                                    className="font-bold text-neutral-900 mb-1 leading-tight text-xl"
+                                >
+                                    {member.name}
+                                </h4>
+                                {member.affiliation && (
+                                    <p
+                                        className="leading-snug mb-2 line-clamp-2 text-neutral-500 text-sm"
+                                    >
+                                        {member.affiliation}
+                                    </p>
+                                )}
+                                <div className="mt-auto">
+                                    {member.email && (
+                                        <a
+                                            href={`mailto:${member.email}`}
+                                            className="text-primary-600 hover:text-primary-800 truncate block hover:underline text-sm font-medium"
+                                        >
+                                            {member.email}
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );
