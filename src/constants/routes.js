@@ -21,6 +21,6 @@ export const NAV_ITEMS = [
     { label: 'Journals', path: ROUTES.JOURNALS },
     { label: 'Registration', path: ROUTES.REGISTRATION },
 
-    { label: 'Committee', path: ROUTES.COMMITTEE },
+    { label: 'Leadership', path: ROUTES.COMMITTEE },
     { label: 'Contact', path: ROUTES.CONTACT },
 ];
