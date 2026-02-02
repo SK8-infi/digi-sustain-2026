@@ -123,7 +123,7 @@ export default function Navbar() {
                                         key={item.path}
                                         to={item.path}
                                         onClick={(e) => handleSmoothScrollNav(e, item.path)}
-                                        className="px-4 py-3 text-xl font-bold transition-colors border-l-4"
+                                        className="px-4 py-3 text-sm font-medium transition-colors border-l-4"
                                         style={({ isActive }) => ({
                                             color: isActive ? '#1a4731' : '#525252',
                                             fontWeight: isActive ? '700' : '500',
