@@ -157,7 +157,7 @@ export default function HeroSection({
             {/* Mobile Tagline Strip - Thinner & Perfectly Balanced */}
             {isHomePage && (
                 <div style={{ backgroundColor: '#1a4731' }} className="md:hidden py-[6px] px-6 text-center border-t border-white/10 flex items-center justify-center">
-                    <p style={{ color: '#ffffff' }} className="m-0 text-[10px] font-bold tracking-wider uppercase leading-snug opacity-100 italic">
+                    <p style={{ color: '#ffffff' }} className="m-0 text-xs font-bold tracking-wider uppercase leading-snug opacity-100 italic">
                         Technology for Viksit Bharat 2047: Digital Innovation, Sustainability, and Inclusive Growth
                     </p>
                 </div>

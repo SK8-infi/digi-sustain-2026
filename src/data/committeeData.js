@@ -2,7 +2,7 @@
 
 export const patron = {
     name: 'Prof. S. N. Singh',
-    designation: 'Patron',
+    designation: null,
     email: null,
     image: 'https://lh3.googleusercontent.com/d/1hWUPw9y-gjR7teWZ2EVVlTvU9ae33txx',
 };
@@ -37,17 +37,8 @@ export const coordinators = [
     }
 ];
 
-export const advisoryBoard = [
-    {
-        name: 'Dr. Rohit Kumar Singh',
-        affiliation: 'IMI Kolkata',
-        email: null,
-    },
-    {
-        name: 'Dr. Jishnu Bhattacharyya',
-        affiliation: 'Swansea University, UK',
-        email: null,
-    },
+// Advisory Board - First Level
+export const advisoryBoardFirstLevel = [
     {
         name: 'Prof. Rajendra Sahu',
         affiliation: null,
@@ -58,11 +49,33 @@ export const advisoryBoard = [
         affiliation: null,
         email: null,
     },
+];
+
+// Advisory Board - Second Level
+export const advisoryBoardSecondLevel = [
     {
         name: 'Dr. Arun Kumar',
         affiliation: null,
         email: null,
     },
+];
+
+// Editorial Board - First Level
+export const editorialBoardFirstLevel = [
+    {
+        name: 'Dr. Rohit Kumar Singh',
+        affiliation: 'IMI Kolkata',
+        email: null,
+    },
+    {
+        name: 'Dr. Jishnu Bhattacharyya',
+        affiliation: 'Swansea University, UK',
+        email: null,
+    },
+];
+
+// Editorial Board - Second Level
+export const editorialBoardSecondLevel = [
     {
         name: 'Dr. Anil Kumar',
         affiliation: 'London Metropolitan University',

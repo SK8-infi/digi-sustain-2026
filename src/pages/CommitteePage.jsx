@@ -1,4 +1,12 @@
-import { patron, conferenceChairs, coordinators, advisoryBoard } from '../data/committeeData';
+import {
+    patron,
+    conferenceChairs,
+    coordinators,
+    advisoryBoardFirstLevel,
+    advisoryBoardSecondLevel,
+    editorialBoardFirstLevel,
+    editorialBoardSecondLevel
+} from '../data/committeeData';
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import CommitteeGrid from '../components/committee/CommitteeGrid';
 
@@ -16,36 +24,59 @@ export default function CommitteePage() {
             {/* Committee Members */}
             <SectionContainer background="white">
                 {/* Leadership */}
-                <div className="mb-16">
+                <div className="mb-8">
                     <SectionHeader
                         title="Conference Leadership"
                         subtitle="Distinguished academics guiding the conference"
                     />
 
                     {/* Patron - Horizontal Layout */}
-                    <div className="max-w-4xl mx-auto mb-16">
-                        <CommitteeGrid title="Patron" members={patron} layout="horizontal" />
+                    <div className="max-w-6xl mx-auto mb-10">
+                        <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Patron</h2>
+                        <CommitteeGrid members={patron} layout="horizontal" />
                     </div>
 
                     {/* Chairs - Side by Side Equal */}
-                    <div className="max-w-4xl mx-auto mb-16">
-                        <CommitteeGrid title="Conference Chairs" members={conferenceChairs} layout="grid" />
-                    </div>
-
-                    {/* Coordinators - Side by Side Equal */}
                     <div className="max-w-4xl mx-auto">
-                        <CommitteeGrid title="Conference Coordinators" members={coordinators} layout="grid" />
+                        <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Conference Chair</h2>
+                        <CommitteeGrid members={conferenceChairs} layout="grid" />
                     </div>
                 </div>
             </SectionContainer>
 
-            {/* Advisory Board */}
+            {/* Board Members Section */}
             <SectionContainer background="light">
-                <SectionHeader
-                    title="Advisory & Editorial Board"
-                    subtitle="Expert advisors supporting the conference"
-                />
-                <CommitteeGrid title="Board Members" members={advisoryBoard} layout="grid" />
+                {/* Advisory Board */}
+                <div className="mb-12">
+                    <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Advisory Board</h2>
+
+                    <div className="max-w-6xl mx-auto mb-8">
+                        <CommitteeGrid members={advisoryBoardFirstLevel} layout="grid" />
+                    </div>
+
+                    <div className="max-w-6xl mx-auto">
+                        <CommitteeGrid members={advisoryBoardSecondLevel} layout="grid" />
+                    </div>
+                </div>
+
+                {/* Editorial Board */}
+                <div className="mb-12">
+                    <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Editorial Board</h2>
+
+                    <div className="max-w-6xl mx-auto mb-8">
+                        <CommitteeGrid members={editorialBoardFirstLevel} layout="grid" />
+                    </div>
+
+                    <div className="max-w-6xl mx-auto">
+                        <CommitteeGrid members={editorialBoardSecondLevel} layout="grid" />
+                    </div>
+                </div>
+
+                {/* Conference Coordinators */}
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Conference Coordinators</h2>
+                    <CommitteeGrid members={coordinators} layout="grid" />
+                </div>
             </SectionContainer>
         </>
     );

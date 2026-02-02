@@ -5,21 +5,26 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
     const cardStyle = "bg-white border border-neutral-200 shadow-sm transition-shadow duration-300";
 
     if (layout === 'horizontal') {
-        // Specifically for Patron: Image Left, Text Right (Centered)
+        // Specifically for Patron: Centered content, wider card
         const member = members; // Should be single object
         return (
-            <div className="mb-0 w-full flex flex-col">
-                <h3 className="text-base md:text-xl font-semibold text-neutral-900 mb-2 md:mb-4 pb-1 md:pb-2 border-b border-primary-200 min-h-[3rem] md:min-h-[3.5rem] flex items-end justify-center text-center">
-                    {title}
-                </h3>
-                <div className={`${cardStyle} rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center gap-6 text-center`}>
-                    {/* Centered Layout: Image Top */}
+            <div className="mb-4 w-full flex flex-col items-center">
+                {title && (
+                    <h3 className="text-xl font-bold text-neutral-900 mb-6 text-center">
+                        {title}
+                    </h3>
+                )}
+                <div
+                    className={`${cardStyle} rounded-3xl p-10 flex flex-col items-center gap-8 text-center max-w-3xl w-full`}
+                    style={{ minHeight: '380px' }}
+                >
+                    {/* Centered Image */}
                     <div
                         className="bg-primary-50 rounded-full flex items-center justify-center text-primary-300 font-bold overflow-hidden shadow-inner border border-primary-100 flex-shrink-0"
                         style={{
-                            width: 'clamp(6rem, 20vw, 10rem)',
-                            height: 'clamp(6rem, 20vw, 10rem)',
-                            fontSize: 'clamp(2rem, 5vw, 3rem)',
+                            width: '180px',
+                            height: '180px',
+                            fontSize: '3.5rem',
                         }}
                     >
                         {member.image ? (
@@ -28,14 +33,14 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                             getInitials(member.name)
                         )}
                     </div>
-                    {/* Text Right */}
-                    <div className="flex-grow flex flex-col items-center text-center">
-                        <h4 className="font-bold text-neutral-900 mb-1" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>{member.name}</h4>
+                    {/* Centered Text */}
+                    <div className="flex-grow flex flex-col items-center">
+                        <h4 className="font-bold text-neutral-900 mb-2 text-3xl md:text-4xl">{member.name}</h4>
                         {member.designation && (
-                            <p className="text-primary-700 font-semibold mb-1" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>{member.designation}</p>
+                            <p className="text-primary-700 font-bold mb-3 text-xl md:text-2xl">{member.designation}</p>
                         )}
                         {member.affiliation && (
-                            <p className="text-neutral-500 mb-2 text-lg">{member.affiliation}</p>
+                            <p className="text-neutral-500 text-lg md:text-xl leading-relaxed">{member.affiliation}</p>
                         )}
                     </div>
                 </div>
@@ -83,18 +88,18 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                             )}
                         </div>
                         <div className="w-full">
-                            <h4 className="font-bold text-neutral-900 mb-0.5" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.5rem)' }}>{member.name}</h4>
+                            <h4 className="font-bold text-neutral-900 mb-0.5" style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}>{member.name}</h4>
                             {member.designation && (
-                                <p className="text-primary-700 font-semibold mb-0.5" style={{ fontSize: 'clamp(0.75rem, 2vw, 1.125rem)' }}>{member.designation}</p>
+                                <p className="text-primary-700 font-semibold mb-0.5" style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>{member.designation}</p>
                             )}
                             {member.affiliation && (
-                                <p className="text-neutral-500 mb-1 leading-tight" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 0.9rem)' }}>{member.affiliation}</p>
+                                <p className="text-neutral-500 mb-1 leading-tight" style={{ fontSize: 'clamp(0.875rem, 1.8vw, 0.9rem)' }}>{member.affiliation}</p>
                             )}
                             {member.email && (
                                 <a
                                     href={`mailto:${member.email}`}
                                     className="text-primary-600 hover:text-primary-800 inline-flex items-center gap-1 break-all justify-center"
-                                    style={{ fontSize: 'clamp(0.65rem, 1.8vw, 0.9rem)' }}
+                                    style={{ fontSize: 'clamp(0.875rem, 1.8vw, 0.9rem)' }}
                                 >
                                     <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -110,20 +115,23 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
     }
 
     return (
-        <div className="mb-12">
-            <h3 className="text-xl font-semibold text-neutral-900 mb-6 pb-2 border-b border-primary-200 min-h-[3rem] md:min-h-[3.5rem] flex items-end justify-center text-center">
-                {title}
-            </h3>
+        <div className="mb-4">
+            {title && (
+                <h3 className="text-xl font-bold text-neutral-900 mb-6 text-center">
+                    {title}
+                </h3>
+            )}
             {/* Grid for multiple members - Using Flex for centering */}
-            <div className="flex flex-wrap justify-center" style={{ gap: 'clamp(0.75rem, 2vw, 1.5rem)' }}>
+            <div className="flex flex-wrap justify-center" style={{ gap: '1.5rem' }}>
                 {members.map((member, index) => (
                     <div
                         key={index}
-                        className="bg-white border border-neutral-200 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-[calc(50%-0.5rem)] md:w-[calc(50%-1rem)]"
+                        className="bg-white border border-neutral-200 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-[260px] md:w-[280px]"
                         style={{
-                            borderRadius: 'clamp(1rem, 2.5vw, 1.5rem)',
-                            padding: 'clamp(0.75rem, 2.5vw, 1.5rem)',
-                            gap: 'clamp(0.5rem, 1.5vw, 0.75rem)'
+                            borderRadius: '1.5rem',
+                            padding: '2.5rem 1.5rem',
+                            gap: '1rem',
+                            minHeight: '340px'
                         }}
                     >
                         {/* Round Image: Relative Size */}
@@ -144,15 +152,13 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                         </div>
                         <div className="min-w-0 w-full flex flex-col items-center flex-grow">
                             <h4
-                                className="font-bold text-neutral-900 mb-0.5 leading-tight"
-                                style={{ fontSize: 'clamp(0.8rem, 2.2vw, 1.25rem)' }}
+                                className="font-bold text-neutral-900 mb-1 leading-tight text-xl"
                             >
                                 {member.name}
                             </h4>
                             {member.affiliation && (
                                 <p
-                                    className="leading-snug mb-1 line-clamp-2 text-neutral-500"
-                                    style={{ fontSize: 'clamp(0.65rem, 1.8vw, 0.9rem)' }}
+                                    className="leading-snug mb-2 line-clamp-2 text-neutral-500 text-sm"
                                 >
                                     {member.affiliation}
                                 </p>
@@ -161,8 +167,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                                 {member.email && (
                                     <a
                                         href={`mailto:${member.email}`}
-                                        className="text-primary-600 hover:text-primary-800 truncate block hover:underline"
-                                        style={{ fontSize: 'clamp(0.6rem, 1.6vw, 0.85rem)' }}
+                                        className="text-primary-600 hover:text-primary-800 truncate block hover:underline text-sm font-medium"
                                     >
                                         {member.email}
                                     </a>

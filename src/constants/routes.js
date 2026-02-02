@@ -18,9 +18,8 @@ export const NAV_ITEMS = [
     { label: 'Call for Papers', path: ROUTES.TRACKS },
     { label: 'Important Dates', path: ROUTES.IMPORTANT_DATES },
     { label: 'Doctoral Colloquium', path: ROUTES.DOCTORAL_COLLOQUIUM },
+    { label: 'Leadership', path: ROUTES.COMMITTEE },
     { label: 'Journals', path: ROUTES.JOURNALS },
     { label: 'Registration', path: ROUTES.REGISTRATION },
-
-    { label: 'Leadership', path: ROUTES.COMMITTEE },
     { label: 'Contact', path: ROUTES.CONTACT },
 ];

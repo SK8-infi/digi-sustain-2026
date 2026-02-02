@@ -57,8 +57,8 @@ export default function Navbar() {
                         <h2
                             className="text-white font-black uppercase text-center leading-[1.1] w-full flex items-center justify-center"
                             style={{
-                                fontSize: 'clamp(0.75rem, 1.5vw, 1.75rem)', // Reduced to fit on one line
-                                letterSpacing: '0.02em', // Slightly tighter spacing to help fit
+                                fontSize: 'clamp(1rem, 2vw, 1.75rem)', // Larger min size for readability
+                                letterSpacing: '0.02em',
                                 color: '#ffffff'
                             }}
                         >
@@ -103,7 +103,7 @@ export default function Navbar() {
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                                 className="lg:hidden p-2 text-gray-500"
                             >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     {isMenuOpen ? (
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                     ) : (
@@ -116,14 +116,14 @@ export default function Navbar() {
 
                     {/* Mobile Navigation Dropdown - Only if NOT Home */}
                     {isMenuOpen && location.pathname !== ROUTES.HOME && (
-                        <div className="lg:hidden py-4 border-t border-gray-100 bg-white shadow-xl rounded-b-xl">
+                        <div className="lg:hidden py-2 border-t border-gray-100 bg-white shadow-xl rounded-b-xl">
                             <div className="flex flex-col gap-1">
                                 {NAV_ITEMS.map((item) => (
                                     <NavLink
                                         key={item.path}
                                         to={item.path}
                                         onClick={(e) => handleSmoothScrollNav(e, item.path)}
-                                        className="px-4 py-3 text-sm font-medium transition-colors border-l-4"
+                                        className="px-4 py-2 text-sm font-medium transition-colors border-l-4"
                                         style={({ isActive }) => ({
                                             color: isActive ? '#1a4731' : '#525252',
                                             fontWeight: isActive ? '700' : '500',

@@ -15,7 +15,7 @@ export default function SectionContainer({
 
     return (
         <section id={id} className={`py-16 md:py-20 ${backgrounds[background]} ${className}`} style={style}>
-            <div className="max-w-7xl mx-auto px-1">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {children}
             </div>
         </section>
@@ -30,7 +30,7 @@ export function SectionHeader({
 }) {
     return (
         <div className={`mb-12 ${centered ? 'text-center' : ''} ${className}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-5xl md:text-6xl font-black text-neutral-900 mb-6">
                 {title}
             </h2>
             {subtitle && (

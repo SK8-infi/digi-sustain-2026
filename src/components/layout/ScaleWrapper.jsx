@@ -9,10 +9,19 @@ export default function ScaleWrapper({ children }) {
 
     useEffect(() => {
         const handleResize = () => {
-            // Use clientWidth to exclude scrollbar width for more accurate scaling
+            // Only apply scaling for larger screens to maintain design proportions
+            // For mobile and tablets (below 1024px), we disable scaling to keep text readable
             const currentWidth = document.documentElement.clientWidth || window.innerWidth;
-            const newScale = currentWidth / DESIGN_WIDTH;
-            setScale(newScale);
+
+            if (currentWidth < 1024) {
+                setScale(1);
+            } else {
+                setScale(currentWidth / DESIGN_WIDTH);
+            }
+
+            if (contentRef.current) {
+                setContentHeight(contentRef.current.offsetHeight);
+            }
         };
 
         handleResize(); // Initial calculation
@@ -35,22 +44,22 @@ export default function ScaleWrapper({ children }) {
         return () => observer.disconnect();
     }, [children]); // Re-observe if children change significantly enough to potentially remount ref? (Unlikely but safe)
 
+    const isMobile = scale === 1;
+
     return (
         <div
-            style={{
+            style={isMobile ? { width: '100%' } : {
                 width: '100%',
-                height: `${contentHeight * scale}px`, // Force container to match visually scaled height
-                overflow: 'hidden' // Hide any potential overflow from the transform source
+                height: `${contentHeight * scale}px`,
+                overflow: 'hidden'
             }}
         >
             <div
                 ref={contentRef}
-                style={{
+                style={isMobile ? { width: '100%' } : {
                     width: `${DESIGN_WIDTH}px`,
                     transform: `scale(${scale})`,
                     transformOrigin: 'top left',
-                    // We don't need absolute positioning if we just let it sit there, 
-                    // but we need to ensure it doesn't collapse.
                 }}
             >
                 {children}
