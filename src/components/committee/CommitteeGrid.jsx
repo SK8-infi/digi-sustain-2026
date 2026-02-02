@@ -2,7 +2,7 @@ import Card from '../ui/Card';
 
 export default function CommitteeGrid({ title, members, layout = 'grid' }) {
     // White Theme + Dark Text
-    const cardStyle = "bg-white border border-neutral-200 shadow-sm transition-shadow duration-300";
+    const cardStyle = "bg-white border border-primary-700 shadow-sm transition-shadow duration-300";
 
     if (layout === 'horizontal') {
         // Specifically for Patron: Centered content, wider card
@@ -15,8 +15,8 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                     </h3>
                 )}
                 <div
-                    className={`${cardStyle} rounded-3xl p-10 flex flex-col items-center gap-8 text-center max-w-3xl w-full`}
-                    style={{ minHeight: '380px' }}
+                    className={`${cardStyle} rounded-3xl p-8 flex flex-col items-center gap-6 text-center max-w-3xl w-full border-primary-700`}
+                    style={{ minHeight: '320px' }}
                 >
                     {/* Centered Image */}
                     <div
@@ -126,12 +126,12 @@ export default function CommitteeGrid({ title, members, layout = 'grid' }) {
                 {members.map((member, index) => (
                     <div
                         key={index}
-                        className="bg-white border border-neutral-200 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-[260px] md:w-[280px]"
+                        className="bg-white border border-primary-700 overflow-hidden flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-[300px] md:w-[320px]"
                         style={{
                             borderRadius: '1.5rem',
-                            padding: '2.5rem 1.5rem',
-                            gap: '1rem',
-                            minHeight: '340px'
+                            padding: '2rem 1.5rem',
+                            gap: '0.75rem',
+                            minHeight: '280px'
                         }}
                     >
                         {/* Round Image: Relative Size */}
