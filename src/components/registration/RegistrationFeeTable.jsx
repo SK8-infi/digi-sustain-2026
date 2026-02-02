@@ -17,36 +17,68 @@ export default function RegistrationFeeTable() {
                         </span>
                     ))}
                 </div>
-                <p className="mt-3 text-sm text-neutral-600">
-                    <span className="font-medium">Applicable for:</span> {registrationNote}
-                </p>
+
             </div>
 
-            {/* Fee Table */}
+            {/* Fee Table - Redesigned to match flyer */}
             <div className="overflow-x-auto">
-                <table className="w-full">
+                <table className="w-full border-collapse border border-[#1a4731]">
                     <thead>
+                        {/* Header Row 1 */}
                         <tr>
-                            <th className="text-left rounded-tl-lg">Participation Type</th>
-                            <th className="text-center">INR (₹)</th>
-                            <th className="text-center rounded-tr-lg">USD ($)</th>
+                            <th colSpan="7" className="border border-[#1a4731] p-3 text-center font-bold text-xl" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>
+                                Registration Details
+                            </th>
+                        </tr>
+                        {/* Header Row 2 */}
+                        <tr>
+                            <th rowSpan="2" className="border border-[#1a4731] p-2 text-center font-bold w-1/4" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>
+                                Category Type/Nationality
+                            </th>
+                            <th colSpan="2" className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>
+                                Online participation and Paper Presentation
+                            </th>
+                            <th colSpan="2" className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>
+                                Offline paper Presentation(at IIITM Gwalior)
+                            </th>
+                            <th colSpan="2" className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>
+                                Paper Presentation and Submission to Journal
+                            </th>
+                        </tr>
+                        {/* Header Row 3 */}
+                        <tr>
+                            <th className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>INR (₹)</th>
+                            <th className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>USD ($)</th>
+                            <th className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>INR (₹)</th>
+                            <th className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>USD ($)</th>
+                            <th className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>INR (₹)</th>
+                            <th className="border border-[#1a4731] p-2 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#1a4731' }}>USD ($)</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {feeStructure.map((fee, index) => (
-                            <tr key={index}>
-                                <td className="font-medium text-neutral-900">{fee.type}</td>
-                                <td className="text-center font-semibold text-primary-700">{fee.inr}</td>
-                                <td className="text-center font-semibold text-primary-700">{fee.usd}</td>
-                            </tr>
-                        ))}
+                        {/* Data Row */}
+                        <tr>
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>
+                                Academician, Doctoral Students, Faculty, Industry Participants, Delegates (India & SAARC)
+                            </td>
+                            {/* Online */}
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>1500</td>
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>17</td>
+                            {/* Offline */}
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>2500</td>
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>28</td>
+                            {/* Journal */}
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>5000</td>
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>55</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
             {/* International Registration Note */}
-            <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-4 text-center">
-                <p className="text-neutral-600 font-medium">{internationalNote}</p>
+            {/* International Registration Note */}
+            <div className="rounded-lg p-4 text-center border border-[#1a4731]" style={{ backgroundColor: '#1a4731' }}>
+                <p className="font-black text-lg" style={{ color: '#ffffff' }}>{internationalNote}</p>
             </div>
 
             {/* QR Code Section */}

@@ -85,7 +85,7 @@ export default function HeroSection({
                         {/* Main Title - Formatted Smartly */}
                         <div className="flex flex-col gap-4 mb-8">
                             <h1 className="text-white font-light leading-tight drop-shadow-lg">
-                                <span className="block text-2xl md:text-3xl lg:text-4xl font-bold mb-2 leading-tight text-white drop-shadow-xl uppercase tracking-wider">
+                                <span className="block text-4xl md:text-6xl lg:text-7xl font-black mb-2 leading-tight text-white drop-shadow-xl uppercase tracking-widest">
                                     {title || "International Conference on Digital Transformative Practices for a Sustainable Future (DIGI-SUSTAIN 2026)"}
                                 </span>
                             </h1>
