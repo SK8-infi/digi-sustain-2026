@@ -14,8 +14,7 @@ export default function NavLinks({
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Check if any item in the 'More' dropdown is active (Desktop only)
-    const isMoreActive = NAV_ITEMS.slice(7).some(item => location.pathname === item.path);
+
 
     const handleSmoothScrollNav = (e, path) => {
         e.preventDefault();
@@ -54,9 +53,10 @@ export default function NavLinks({
     }
 
     // --- DESKTOP LAYOUT (Dropdown for extra items) ---
+    // --- DESKTOP LAYOUT (Standard List - No Dropdown) ---
     return (
-        <div className={`flex items-center gap-6 ${className}`}>
-            {NAV_ITEMS.slice(0, 7).map((item) => (
+        <div className={`flex items-center gap-6 flex-wrap ${className}`}>
+            {NAV_ITEMS.map((item) => (
                 <NavLink
                     key={item.path}
                     to={item.path}
@@ -74,41 +74,6 @@ export default function NavLinks({
                     {item.label}
                 </NavLink>
             ))}
-
-            {/* More dropdown */}
-            <div className="relative group h-full flex items-center">
-                <button
-                    style={{
-                        color: isMoreActive ? activeColor : inactiveColor,
-                        fontWeight: isMoreActive ? '700' : '500',
-                        borderBottom: isMoreActive ? `2px solid ${activeColor}` : '2px solid transparent',
-                        paddingBottom: '2px'
-                    }}
-                    className={`text-xs font-medium tracking-wide uppercase transition-all duration-200 flex items-center gap-1 hover:opacity-80 ${itemClassName}`}
-                >
-                    More
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div className="absolute right-0 top-full mt-1 w-48 bg-white rounded shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    {NAV_ITEMS.slice(7).map((item) => (
-                        <NavLink
-                            key={item.path}
-                            to={item.path}
-                            onClick={(e) => handleSmoothScrollNav(e, item.path)}
-                            className="block px-4 py-2 text-[13px] uppercase tracking-wider transition-colors"
-                            style={({ isActive }) => ({
-                                color: isActive ? activeColor : inactiveColor,
-                                fontWeight: isActive ? '700' : '500',
-                                backgroundColor: isActive ? '#f0f5f2' : 'transparent'
-                            })}
-                        >
-                            {item.label}
-                        </NavLink>
-                    ))}
-                </div>
-            </div>
         </div>
     );
 }
