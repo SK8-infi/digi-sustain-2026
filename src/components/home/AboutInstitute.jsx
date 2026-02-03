@@ -10,7 +10,7 @@ export default function AboutInstitute() {
             <SectionContainer background="white" className="!pt-16 !pb-12">
                 <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                     {/* Text Content */}
-                    <div className="order-2 lg:order-1 space-y-6">
+                    <div className="order-2 lg:order-2 space-y-6">
                         <div className="space-y-2">
                             <h2 className="text-3xl font-bold text-neutral-900">
                                 About ABV-IIITM Gwalior
@@ -33,7 +33,7 @@ export default function AboutInstitute() {
                     </div>
 
                     {/* Image */}
-                    <div className="order-1 lg:order-2">
+                    <div className="order-1 lg:order-1">
                         <div className="relative max-w-full">
                             {/* Decorative background elements - Replicating Poster Style */}
                             <div className="absolute -inset-4 bg-gradient-to-tr from-primary-100 to-primary-50 rounded-[2rem] opacity-60" />
@@ -58,7 +58,7 @@ export default function AboutInstitute() {
                     {/* Top part: DoMS Content */}
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Image */}
-                        <div className="order-1">
+                        <div className="order-1 lg:order-2">
                             <div className="relative max-w-full">
                                 {/* Decorative background elements - Replicating Poster Style */}
                                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary-100 to-primary-50 rounded-[2rem] opacity-60" />
@@ -76,7 +76,7 @@ export default function AboutInstitute() {
                         </div>
 
                         {/* Text Content */}
-                        <div className="order-2 space-y-6">
+                        <div className="order-2 lg:order-1 space-y-6">
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-bold text-neutral-900">
                                     About the Department of Management Studies (DoMS)
