@@ -37,9 +37,9 @@ export default function Navbar() {
                 className="block border-b-2 hover:bg-[#153d29] transition-colors"
                 style={{ backgroundColor: '#1a4731', borderColor: '#0d2619' }}
             >
-                <div className="relative flex items-center w-full min-h-[64px] py-3">
-                    {/* Official Logo - Absolute positioned for perfect centering of text */}
-                    <div className="absolute left-0 px-4 sm:px-6 z-10">
+                <div className="flex items-center w-full min-h-[64px] py-2 px-2 sm:px-4">
+                    {/* Left Column - Logo */}
+                    <div className="w-12 sm:w-16 flex-shrink-0 flex justify-start">
                         <div className="bg-white rounded-full p-[3px] w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-lg">
                             <img
                                 src="https://lh3.googleusercontent.com/d/1LNtqXOXfvsyYZaclWSc2QM-yzpxov1vw"
@@ -49,12 +49,12 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Text - Perfectly centered globally */}
-                    <div className="flex-1 flex items-center justify-center px-12 sm:px-20 overflow-hidden">
+                    {/* Center Column - Text (Perfectly centered globally) */}
+                    <div className="flex-1 flex items-center justify-center px-2 overflow-hidden">
                         <h2
-                            className="text-white font-black uppercase text-center leading-[1.15] tracking-tight"
+                            className="text-white font-black uppercase text-center leading-[1.1] tracking-tight"
                             style={{
-                                fontSize: 'clamp(0.55rem, 4vw, 1.75rem)',
+                                fontSize: 'clamp(0.5rem, 2.85vw, 1.75rem)',
                                 letterSpacing: '0.01em',
                                 color: '#ffffff'
                             }}
@@ -62,6 +62,9 @@ export default function Navbar() {
                             Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior
                         </h2>
                     </div>
+
+                    {/* Right Column - Balanced placeholder for centering */}
+                    <div className="w-12 sm:w-16 flex-shrink-0"></div>
                 </div>
             </a>
 
