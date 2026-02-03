@@ -37,13 +37,10 @@ export default function Navbar() {
                 className="block border-b-2 hover:bg-[#153d29] transition-colors"
                 style={{ backgroundColor: '#1a4731', borderColor: '#0d2619' }}
             >
-                <div className="flex items-center w-full min-h-[64px] py-3">
-                    {/* Official Logo - Full height strip */}
-                    <div
-                        className="flex-shrink-0 flex items-center justify-center px-4 sm:px-6"
-                        style={{ backgroundColor: 'transparent' }}
-                    >
-                        <div className="bg-white rounded-full p-[3px] w-14 h-14 flex items-center justify-center shadow-lg">
+                <div className="relative flex items-center w-full min-h-[64px] py-3">
+                    {/* Official Logo - Absolute positioned for perfect centering of text */}
+                    <div className="absolute left-0 px-4 sm:px-6 z-10">
+                        <div className="bg-white rounded-full p-[3px] w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-lg">
                             <img
                                 src="https://lh3.googleusercontent.com/d/1LNtqXOXfvsyYZaclWSc2QM-yzpxov1vw"
                                 alt="ABV-IIITM Gwalior Logo"
@@ -52,13 +49,13 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Text - Dynamic scaling, priority single line, graceful 2-line fallback */}
-                    <div className="flex-1 flex items-center justify-center py-2 px-2 sm:px-4 overflow-hidden">
+                    {/* Text - Perfectly centered globally */}
+                    <div className="flex-1 flex items-center justify-center px-12 sm:px-20 overflow-hidden">
                         <h2
-                            className="text-white font-black uppercase text-center leading-[1.1] w-full flex items-center justify-center"
+                            className="text-white font-black uppercase text-center leading-[1.15] tracking-tight"
                             style={{
-                                fontSize: 'clamp(1rem, 2vw, 1.75rem)', // Larger min size for readability
-                                letterSpacing: '0.02em',
+                                fontSize: 'clamp(0.55rem, 4vw, 1.75rem)',
+                                letterSpacing: '0.01em',
                                 color: '#ffffff'
                             }}
                         >
@@ -68,54 +65,49 @@ export default function Navbar() {
                 </div>
             </a>
 
-            {/* Main navbar - Tiny version */}
-            <nav>
+            {/* Main navbar - With Marquee */}
+            <nav className="border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-12">
-                        {/* Logo - Smaller */}
-                        <Link
-                            to={ROUTES.HOME}
-                            onClick={(e) => handleSmoothScrollNav(e, ROUTES.HOME)}
-                            className="flex items-center gap-2"
+                    <div className="flex items-center justify-between h-12">
+                        {/* Marquee Container - Fixed width on left */}
+                        <div className="marquee-container flex-shrink-0" style={{ width: '250px' }}>
+                            {/* Only one instance as requested */}
+                            <div className="inline-flex items-center gap-2 mr-8">
+                                <div
+                                    style={{ backgroundColor: '#1a4731' }}
+                                    className="w-7 h-7 rounded-full flex items-center justify-center"
+                                >
+                                    <span className="text-white font-bold text-[10px]">DS</span>
+                                </div>
+                                <div>
+                                    <span style={{ color: '#1a4731' }} className="font-semibold text-sm tracking-tight uppercase">DIGI-SUSTAIN</span>
+                                    <span className="text-gray-500 font-normal text-sm ml-1 uppercase">2026</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Navigation - Hidden on mobile, shown on desktop */}
+                        <div className="hidden lg:flex items-center h-full">
+                            <NavLinks layout="desktop" className="gap-6" />
+                        </div>
+
+                        {/* Mobile menu button */}
+                        <button
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className="lg:hidden p-2 text-gray-500 ml-auto"
                         >
-                            <div
-                                style={{ backgroundColor: '#1a4731' }}
-                                className="w-7 h-7 rounded-full flex items-center justify-center"
-                            >
-                                <span className="text-white font-bold text-[10px]">DS</span>
-                            </div>
-                            <div>
-                                <span style={{ color: '#1a4731' }} className="font-semibold text-sm tracking-tight">DIGI-SUSTAIN</span>
-                                <span className="text-gray-500 font-normal text-sm ml-1">2026</span>
-                            </div>
-                        </Link>
-
-                        {/* Desktop Navigation - Only show if NOT on Home page */}
-                        {location.pathname !== ROUTES.HOME && (
-                            <div className="hidden lg:flex items-center h-full">
-                                <NavLinks layout="desktop" className="gap-6" />
-                            </div>
-                        )}
-
-                        {/* Mobile menu button - Hide on Home Page (since we have body nav) */}
-                        {location.pathname !== ROUTES.HOME && (
-                            <button
-                                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="lg:hidden p-2 text-gray-500"
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    {isMenuOpen ? (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    ) : (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                    )}
-                                </svg>
-                            </button>
-                        )}
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                {isMenuOpen ? (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                ) : (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                )}
+                            </svg>
+                        </button>
                     </div>
 
-                    {/* Mobile Navigation Dropdown - Only if NOT Home */}
-                    {isMenuOpen && location.pathname !== ROUTES.HOME && (
+                    {/* Mobile Navigation Dropdown */}
+                    {isMenuOpen && (
                         <div className="lg:hidden py-2 border-t border-gray-100 bg-white shadow-xl rounded-b-xl">
                             <div className="flex flex-col gap-1">
                                 {NAV_ITEMS.map((item) => (

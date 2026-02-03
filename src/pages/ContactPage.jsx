@@ -34,7 +34,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <p className="text-lg font-semibold text-neutral-900">{contactPerson.name}</p>
-                                    <p className="text-primary-600">Conference Secretariat</p>
+                                    <p className="text-primary-600">{contactPerson.designation || 'Conference Coordinator'}</p>
                                 </div>
                             </div>
 
