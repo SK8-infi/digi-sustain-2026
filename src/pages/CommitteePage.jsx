@@ -33,13 +33,13 @@ export default function CommitteePage() {
                     {/* Patron - Horizontal Layout */}
                     <div className="max-w-6xl mx-auto mb-10">
                         <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Patron</h2>
-                        <CommitteeGrid members={patron} layout="horizontal" />
+                        <CommitteeGrid members={patron} layout="horizontal" variant="leadership" />
                     </div>
 
                     {/* Chairs - Side by Side Equal */}
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Conference Chair</h2>
-                        <CommitteeGrid members={conferenceChairs} layout="grid" />
+                        <CommitteeGrid members={conferenceChairs} layout="grid" variant="leadership" />
                     </div>
                 </div>
             </SectionContainer>
@@ -51,11 +51,11 @@ export default function CommitteePage() {
                     <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Advisory Board</h2>
 
                     <div className="max-w-6xl mx-auto mb-8">
-                        <CommitteeGrid members={advisoryBoardFirstLevel} layout="grid" />
+                        <CommitteeGrid members={advisoryBoardFirstLevel} layout="grid" variant="leadership" />
                     </div>
 
                     <div className="max-w-6xl mx-auto">
-                        <CommitteeGrid members={advisoryBoardSecondLevel} layout="grid" />
+                        <CommitteeGrid members={advisoryBoardSecondLevel} layout="grid" variant="leadership" startIndex={2} />
                     </div>
                 </div>
 
@@ -64,18 +64,18 @@ export default function CommitteePage() {
                     <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Editorial Board</h2>
 
                     <div className="max-w-6xl mx-auto mb-8">
-                        <CommitteeGrid members={editorialBoardFirstLevel} layout="grid" />
+                        <CommitteeGrid members={editorialBoardFirstLevel} layout="grid" variant="leadership" />
                     </div>
 
                     <div className="max-w-6xl mx-auto">
-                        <CommitteeGrid members={editorialBoardSecondLevel} layout="grid" />
+                        <CommitteeGrid members={editorialBoardSecondLevel} layout="grid" variant="leadership" startIndex={2} />
                     </div>
                 </div>
 
                 {/* Conference Coordinators */}
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl font-bold text-primary-700 mb-8 text-center">Conference Coordinators</h2>
-                    <CommitteeGrid members={coordinators} layout="grid" />
+                    <CommitteeGrid members={coordinators} layout="grid" variant="leadership" />
                 </div>
             </SectionContainer>
         </>
