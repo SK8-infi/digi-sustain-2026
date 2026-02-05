@@ -12,12 +12,12 @@ export default function AboutInstitute() {
                     {/* Text Content */}
                     <div className="order-2 lg:order-2 space-y-6">
                         <div className="space-y-2">
-                            <h2 className="text-3xl font-bold text-neutral-900">
+                            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900">
                                 About ABV-IIITM Gwalior
                             </h2>
-                            <div className="w-20 h-1.5 bg-primary-600 rounded-full" />
+                            <div className="w-16 sm:w-20 h-1.5 bg-primary-600 rounded-full" />
                         </div>
-                        <p className="text-neutral-600 leading-relaxed text-lg text-justify">
+                        <p className="text-neutral-600 leading-relaxed text-base sm:text-lg text-justify">
                             Atal Bihari Vajpayee- Indian Institute of Information Technology & Management
                             (ABV-IIITM), Gwalior, was established in 1997 by the Ministry of Human Resource
                             Development, Government of India. It is a premier institute known for excellence
@@ -78,12 +78,12 @@ export default function AboutInstitute() {
                         {/* Text Content */}
                         <div className="order-2 lg:order-1 space-y-6">
                             <div className="space-y-2">
-                                <h2 className="text-3xl font-bold text-neutral-900">
-                                    About the Department of Management Studies (DoMS)
+                                <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900">
+                                    About Department of Management Studies (DoMS)
                                 </h2>
-                                <div className="w-20 h-1.5 bg-primary-600 rounded-full" />
+                                <div className="w-16 sm:w-20 h-1.5 bg-primary-600 rounded-full" />
                             </div>
-                            <p className="text-neutral-600 leading-relaxed text-lg text-justify">
+                            <p className="text-neutral-600 leading-relaxed text-base sm:text-lg text-justify">
                                 The Department of Management Studies (DoMS) is an academic department of
                                 ABV-IIITM Gwalior. DoMS offers academic Programmes such as Ph.D., MBA and
                                 Integrated Programmes in Management with dual degrees of B.Tech and M.B.A.
@@ -95,7 +95,7 @@ export default function AboutInstitute() {
                     </div>
 
                     {/* Bottom part: Highlights Grid */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                         <HighlightCard
                             icon={
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

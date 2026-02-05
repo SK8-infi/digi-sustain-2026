@@ -28,7 +28,7 @@ export default function IntroSection() {
                     </div>
 
                     <div className="prose prose-lg text-neutral-600 text-justify max-w-none">
-                        <p className="leading-loose text-[1.05rem] md:text-[1.125rem] font-light text-neutral-700 tracking-wide">
+                        <p className="leading-relaxed text-base sm:text-lg text-neutral-700">
                             {introContent.mainIntro}
                         </p>
                     </div>
