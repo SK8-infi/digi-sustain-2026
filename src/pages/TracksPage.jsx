@@ -22,11 +22,9 @@ export default function TracksPage() {
                     subtitle="Core management disciplines exploring digital transformation"
                     centered={true}
                 />
-                <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto px-4">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-7xl mx-auto px-4">
                     {functionalTracks.map((track, index) => (
-                        <div key={track.id} className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] flex">
-                            <TrackCard track={track} variant="functional" index={index} />
-                        </div>
+                        <TrackCard key={track.id} track={track} variant="functional" index={index} />
                     ))}
                 </div>
             </SectionContainer>
@@ -38,11 +36,9 @@ export default function TracksPage() {
                     subtitle="Cutting-edge research areas at the intersection of technology and sustainability"
                     centered={true}
                 />
-                <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto px-4">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-7xl mx-auto px-4">
                     {specializedTracks.map((track, index) => (
-                        <div key={track.id} className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] flex">
-                            <TrackCard track={track} variant="specialized" index={index} />
-                        </div>
+                        <TrackCard key={track.id} track={track} variant="specialized" index={index} />
                     ))}
                 </div>
             </SectionContainer>
@@ -53,7 +49,7 @@ export default function TracksPage() {
                     <h2 className="text-3xl font-bold text-primary-900 mb-4">
                         Ready to Submit Your Research?
                     </h2>
-                    <p className="text-lg text-primary-700 mb-8 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg text-primary-700 mb-8 max-w-2xl mx-auto">
                         Abstract submissions are welcome until 31 March 2026. All accepted abstracts will be included in the Book of Abstracts with ISBN.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
