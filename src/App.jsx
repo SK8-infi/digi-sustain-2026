@@ -8,7 +8,6 @@ import DoctoralColloquiumPage from './pages/DoctoralColloquiumPage';
 import JournalsPage from './pages/JournalsPage';
 import RegistrationPage from './pages/RegistrationPage';
 import CommitteePage from './pages/CommitteePage';
-import ContactPage from './pages/ContactPage';
 import { ROUTES } from './constants/routes';
 
 import ScrollToTop from './components/layout/ScrollToTop';
@@ -27,7 +26,6 @@ export default function App() {
           <Route path={ROUTES.JOURNALS} element={<JournalsPage />} />
           <Route path={ROUTES.REGISTRATION} element={<RegistrationPage />} />
           <Route path={ROUTES.COMMITTEE} element={<CommitteePage />} />
-          <Route path={ROUTES.CONTACT} element={<ContactPage />} />
         </Route>
       </Routes>
     </Router>
