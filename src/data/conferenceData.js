@@ -8,8 +8,8 @@ export const conferenceInfo = {
     venue: {
         name: 'Atal Bihari Vajpayee – Indian Institute of Information Technology and Management (ABV-IIITM)',
         shortName: 'ABV-IIITM Gwalior',
-        address: 'Morena Road, IIITM Campus, Gwalior, Madhya Pradesh – 474015, India',
-        mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.123456789!2d78.1234567!3d26.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sABV-IIITM%20Gwalior!5e0!3m2!1sen!2sin!4v1234567890',
+        address: 'Morena Link Road, Gwalior, Madhya Pradesh 474015, India',
+        mapEmbedUrl: 'https://maps.google.com/maps?q=ABV-IIITM+Gwalior+%4026.2485,78.1746&z=15&output=embed',
     },
 };
 

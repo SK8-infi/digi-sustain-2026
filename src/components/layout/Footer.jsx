@@ -10,40 +10,40 @@ export default function Footer() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#4ade80] opacity-[0.03] blur-[120px] rounded-full pointer-events-none"></div>
 
             {/* Main footer content */}
-            <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6">
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-6 items-stretch">
+            <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
 
-                    {/* Column 2: DIGI-SUSTAIN 2026 (Center - Now Top on Mobile) */}
-                    <div className="order-1 md:order-2 col-span-2 md:col-span-1 flex flex-col items-center text-center space-y-3 px-4 md:px-6 h-full">
-                        <div className="space-y-1.5">
+                    {/* Column 1: Branding (Left) */}
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
+                        <div className="space-y-2">
                             <h3 className="text-xl lg:text-2xl font-extrabold !text-white tracking-tight drop-shadow-md">
                                 {conferenceInfo.shortTitle}
                             </h3>
-                            <div className="h-1 w-12 bg-[#4ade80] rounded-full mx-auto opacity-70"></div>
+                            <div className="h-1 w-12 bg-[#4ade80] rounded-full mx-auto md:mx-0 opacity-70"></div>
                         </div>
-                        <p className="!text-white text-sm leading-relaxed max-w-md font-medium text-shadow-sm">
+                        <p className="!text-white text-sm leading-relaxed max-w-xs font-medium text-shadow-sm opacity-90">
                             {conferenceInfo.fullTitle}
                         </p>
-                        <div className="bg-white/5 rounded-xl p-3 border border-white/10 w-full backdrop-blur-sm shadow-inner group hover:bg-white/10 transition-colors duration-300">
-                            <p className="!text-white text-xs font-bold uppercase tracking-wider mb-1 transition-colors">Organized By</p>
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10 w-full backdrop-blur-sm shadow-inner group hover:bg-white/10 transition-colors duration-300">
+                            <p className="!text-white text-xs font-bold uppercase tracking-wider mb-2 transition-colors text-opacity-80">Organized By</p>
                             <p className="!text-white font-semibold text-sm leading-snug">
                                 Department of Management Studies (DoMS)<br />
-                                <span className="!text-white font-normal">ABV-IIITM Gwalior</span>
+                                <span className="!text-white font-normal text-opacity-90">ABV-IIITM Gwalior</span>
                             </p>
                         </div>
                     </div>
 
-                    {/* Column 1: Quick Links (Bottom Left on Mobile) */}
-                    <div className="order-2 md:order-1 col-span-1 flex flex-col items-start space-y-3 md:pr-8 md:border-r md:border-white/10 h-full">
-                        <h4 className="text-base font-bold tracking-wide uppercase !text-white drop-shadow-sm text-left w-full pl-2 md:pl-0">
+                    {/* Column 2: Quick Links */}
+                    <div className="flex flex-col items-center md:items-start space-y-4">
+                        <h4 className="text-base font-bold tracking-wide uppercase !text-white drop-shadow-sm border-b-2 border-[#4ade80]/50 pb-1 mb-2">
                             Quick Links
                         </h4>
-                        <ul className="space-y-1.5 w-full flex flex-col items-start pl-2 md:pl-0 flex-grow">
+                        <ul className="space-y-2 w-full flex flex-col items-center md:items-start">
                             {NAV_ITEMS.slice(0, 6).map((item) => (
-                                <li key={item.path} className="w-full text-left">
+                                <li key={item.path} className="w-full text-center md:text-left">
                                     <Link
                                         to={item.path}
-                                        className="!text-white hover:underline hover:translate-x-1 transition-all duration-300 text-sm font-medium inline-block py-0.5"
+                                        className="!text-white hover:text-[#4ade80] hover:translate-x-1 transition-all duration-300 text-sm font-medium inline-block py-0.5"
                                     >
                                         {item.label}
                                     </Link>
@@ -52,48 +52,71 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 3: Contact Information (Bottom Right on Mobile) */}
-                    <div className="order-3 md:order-3 col-span-1 flex flex-col items-end space-y-3 md:pl-8 md:border-l md:border-white/10 h-full text-right">
-                        <h4 className="text-base font-bold tracking-wide uppercase !text-white drop-shadow-sm w-full pr-2 md:pr-0">
+                    {/* Column 3: Contact Info (Structured) */}
+                    <div className="flex flex-col items-center md:items-start space-y-4">
+                        <h4 className="text-base font-bold tracking-wide uppercase !text-white drop-shadow-sm border-b-2 border-[#4ade80]/50 pb-1 mb-2">
                             Contact Info
                         </h4>
-                        <div className="w-full pr-2 md:pr-0 flex-grow grid grid-cols-2 gap-2">
-                            {/* Venue - Top Left in Grid */}
-                            <div className="col-span-1 flex flex-col items-end hover:bg-white/5 p-1.5 rounded-lg transition-colors duration-300">
-                                <p className="!text-white font-semibold mb-0.5 text-sm transition-colors w-full text-right">Venue</p>
-                                <p className="!text-white text-xs leading-tight max-w-xs text-right">
-                                    Morena Road, IIITM Campus,<br />Gwalior, M.P.
+
+                        <div className="space-y-4 w-full">
+                            {/* Venue */}
+                            <div className="flex flex-col items-center md:items-start gap-1">
+                                <div className="flex items-center gap-2 text-[#4ade80]">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                    <span className="text-xs font-bold uppercase tracking-wider">Venue</span>
+                                </div>
+                                <p className="!text-white text-sm leading-snug text-center md:text-left opacity-90">
+                                    Morena Link Road, IIITM Campus,<br />Gwalior, M.P.
                                 </p>
                             </div>
 
-                            {/* Email - Top Right in Grid */}
-                            <div className="col-span-1 flex flex-col items-end p-1.5">
-                                <p className="!text-white font-semibold mb-0.5 text-sm transition-colors w-full text-right">Email</p>
-                                <div className="flex flex-col items-end gap-2">
-                                    <a
-                                        href="mailto:chetanya@iiitm.ac.in"
-                                        className="!text-white hover:underline transition-colors text-xs font-medium border-b border-white pb-0.5 text-right break-all"
-                                    >
-                                        chetanya@iiitm.ac.in
-                                    </a>
-                                    <a
-                                        href={`mailto:${contactPerson.email}`}
-                                        className="!text-white hover:underline transition-colors text-xs font-medium border-b border-white pb-0.5 text-right break-all"
-                                    >
-                                        {contactPerson.email}
-                                    </a>
+                            {/* Email */}
+                            <div className="flex flex-col items-center md:items-start gap-1">
+                                <div className="flex items-center gap-2 text-[#4ade80]">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                    <span className="text-xs font-bold uppercase tracking-wider">Email</span>
                                 </div>
+                                <a href="mailto:chetanya@iiitm.ac.in" className="!text-white hover:text-[#4ade80] transition-colors text-sm font-medium border-b border-white/30 pb-0.5">
+                                    chetanya@iiitm.ac.in
+                                </a>
+                                <a href={`mailto:${contactPerson.email}`} className="!text-white hover:text-[#4ade80] transition-colors text-sm font-medium border-b border-white/30 pb-0.5">
+                                    {contactPerson.email}
+                                </a>
                             </div>
 
-                            {/* Phone - Bottom Full Width */}
-                            <div className="col-span-2 flex flex-col items-end p-1">
-                                <p className="!text-white font-semibold mb-0.5 text-sm transition-colors">Phone</p>
-                                <p className="!text-white text-xs font-mono tracking-tight text-right">
+                            {/* Phone */}
+                            <div className="flex flex-col items-center md:items-start gap-1">
+                                <div className="flex items-center gap-2 text-[#4ade80]">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                                    <span className="text-xs font-bold uppercase tracking-wider">Phone</span>
+                                </div>
+                                <p className="!text-white text-sm font-mono tracking-tight opacity-90">
                                     {contactPerson.phones.join(' | ')}
                                 </p>
                             </div>
                         </div>
                     </div>
+
+                    {/* Column 4: Map */}
+                    <div className="flex flex-col items-center md:items-start space-y-4 w-full">
+                        <h4 className="text-base font-bold tracking-wide uppercase !text-white drop-shadow-sm border-b-2 border-[#4ade80]/50 pb-1 mb-2">
+                            Location
+                        </h4>
+                        <div className="w-full h-48 rounded-xl overflow-hidden shadow-lg border-2 border-white/10 bg-white/5">
+                            <iframe
+                                title="IIITM Gwalior Location"
+                                src={conferenceInfo.venue.mapEmbedUrl}
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="grayscale hover:grayscale-0 transition-all duration-500 opacity-90 hover:opacity-100"
+                            ></iframe>
+                        </div>
+                    </div>
+
                 </div>
 
                 {/* Separator Line */}

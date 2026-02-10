@@ -59,7 +59,7 @@ export default function RegistrationFeeTable() {
                         {/* Data Row */}
                         <tr>
                             <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>
-                                Academician, Doctoral Students, Faculty, Industry Participants, Delegates (India & SAARC)
+                                Academician, Doctoral Students, Faculty, Industry Participants, Delegates
                             </td>
                             {/* Online */}
                             <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>1500</td>
@@ -75,11 +75,7 @@ export default function RegistrationFeeTable() {
                 </table>
             </div>
 
-            {/* International Registration Note */}
-            {/* International Registration Note */}
-            <div className="rounded-lg p-4 text-center border border-[#1a4731]" style={{ backgroundColor: '#1a4731' }}>
-                <p className="font-black text-lg" style={{ color: '#ffffff' }}>{internationalNote}</p>
-            </div>
+            {/* International Registration Note Removed */}
 
             {/* QR Code Section */}
             <div className="bg-white border border-neutral-200 rounded-lg p-6">

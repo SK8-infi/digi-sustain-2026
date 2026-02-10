@@ -14,8 +14,17 @@ export default function AboutPage() {
             />
 
             {/* About the Conference Theme */}
-            <SectionContainer background="white">
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <SectionContainer background="white" className="relative overflow-hidden">
+                {/* Watermark */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] opacity-[0.08] pointer-events-none select-none z-0">
+                    <img
+                        src="https://lh3.googleusercontent.com/d/1cgyYIX8AHiYkGObDopNy3e1NUiK-22kJ"
+                        alt="Watermark"
+                        className="w-full h-full object-contain"
+                    />
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start relative z-10">
                     <div className="order-1 lg:order-1">
                         <SectionHeader
                             title="About the Conference Theme"

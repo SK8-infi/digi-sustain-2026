@@ -53,7 +53,7 @@ export default function HeroSection({
 
     return (
         <>
-            <section className="relative w-full overflow-hidden h-[70vh] min-h-[500px] max-h-[700px]">
+            <section className={`relative w-full overflow-hidden ${isHomePage ? 'h-[77vh] min-h-[550px] max-h-[770px]' : 'h-[50vh] min-h-[400px] max-h-[500px]'}`}>
                 {/* Carousel Container */}
                 <div className="absolute inset-0">
                     {carouselImages.map((image, index) => (
@@ -72,10 +72,10 @@ export default function HeroSection({
                 </div>
 
                 {/* Dark overlay for text readability - Enhanced shadow/overlay */}
-                <div className="absolute inset-0 bg-black/60" />
+                <div className={`absolute inset-0 ${isHomePage ? 'bg-black/60' : 'bg-black/80'}`} />
 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center pt-24 md:pt-16 pb-20 md:pb-0">
+                <div className="absolute inset-0 flex items-center justify-center px-4 pt-28">
                     <div className="text-center text-white px-4 max-w-7xl w-full">
                         {/* Small label - Visible on ALL Pages now */}
                         <p style={{ color: '#ffffff' }} className="text-sm md:text-base uppercase tracking-[0.2em] mb-6 font-semibold drop-shadow-md">
@@ -92,7 +92,7 @@ export default function HeroSection({
                         </div>
 
                         {/* Tagline - Overlay (Visible on ALL screens now) */}
-                        <p className="block text-sm md:text-xl font-bold !text-white mb-8 max-w-6xl mx-auto drop-shadow-[0_4px_6px_rgba(0,0,0,1)] tracking-wide leading-relaxed">
+                        <p className="hidden md:block text-sm md:text-xl font-bold !text-white mb-8 max-w-6xl mx-auto drop-shadow-[0_4px_6px_rgba(0,0,0,1)] tracking-wide leading-relaxed">
                             {subtitle || "Technology for Viksit Bharat 2047: Digital Innovation, Sustainability, and Inclusive Growth"}
                         </p>
 
