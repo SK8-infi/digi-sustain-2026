@@ -55,14 +55,14 @@ export default function NavLinks({
     // --- DESKTOP LAYOUT (Dropdown for extra items) ---
     // --- DESKTOP LAYOUT (Standard List - No Dropdown) ---
     return (
-        <div className={`flex items-center gap-6 flex-wrap ${className}`}>
+        <div className={`flex items-center gap-4 xl:gap-6 whitespace-nowrap overflow-visible ${className}`}>
             {NAV_ITEMS.map((item) => (
                 <NavLink
                     key={item.path}
                     to={item.path}
                     onClick={(e) => handleSmoothScrollNav(e, item.path)}
                     className={({ isActive }) =>
-                        `text-xs font-medium tracking-wide uppercase transition-all duration-200 ${itemClassName}`
+                        `text-[10px] xl:text-xs font-medium tracking-wide uppercase transition-all duration-200 ${itemClassName}`
                     }
                     style={({ isActive }) => ({
                         color: isActive ? activeColor : inactiveColor,

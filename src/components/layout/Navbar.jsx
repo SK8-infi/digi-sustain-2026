@@ -72,10 +72,10 @@ export default function Navbar() {
             <nav className="border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-12">
-                        {/* Marquee Container - Fixed width on left */}
-                        <div className="marquee-container flex-shrink-0" style={{ width: '250px' }}>
+                        {/* Marquee Container - Responsive width */}
+                        <div className="marquee-container flex-shrink-0" style={{ width: 'clamp(180px, 20vw, 250px)' }}>
                             {/* Only one instance as requested */}
-                            <div className="inline-flex items-center gap-2 mr-8">
+                            <div className="inline-flex items-center gap-2 mr-4 lg:mr-8">
                                 <div
                                     style={{ backgroundColor: '#1a4731' }}
                                     className="w-7 h-7 rounded-full flex items-center justify-center"
@@ -83,15 +83,15 @@ export default function Navbar() {
                                     <span className="text-white font-bold text-[10px]">DS</span>
                                 </div>
                                 <div>
-                                    <span style={{ color: '#1a4731' }} className="font-semibold text-sm tracking-tight uppercase">DIGI-SUSTAIN</span>
-                                    <span className="text-gray-500 font-normal text-sm ml-1 uppercase">2026</span>
+                                    <span style={{ color: '#1a4731' }} className="font-semibold text-xs sm:text-sm tracking-tight uppercase">DIGI-SUSTAIN</span>
+                                    <span className="text-gray-500 font-normal text-xs sm:text-sm ml-1 uppercase">2026</span>
                                 </div>
                             </div>
                         </div>
 
                         {/* Navigation - Hidden on mobile, shown on desktop */}
                         <div className="hidden lg:flex items-center h-full">
-                            <NavLinks layout="desktop" className="gap-6" />
+                            <NavLinks layout="desktop" className="gap-2 xl:gap-6" />
                         </div>
 
                         {/* Mobile menu button */}
