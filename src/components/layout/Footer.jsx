@@ -69,12 +69,20 @@ export default function Footer() {
                             {/* Email - Top Right in Grid */}
                             <div className="col-span-1 flex flex-col items-end p-1.5">
                                 <p className="!text-white font-semibold mb-0.5 text-sm transition-colors w-full text-right">Email</p>
-                                <a
-                                    href={`mailto:${contactPerson.email}`}
-                                    className="!text-white hover:underline transition-colors text-xs font-medium border-b border-white pb-0.5 text-right break-all"
-                                >
-                                    {contactPerson.email}
-                                </a>
+                                <div className="flex flex-col items-end gap-2">
+                                    <a
+                                        href="mailto:chetanya@iiitm.ac.in"
+                                        className="!text-white hover:underline transition-colors text-xs font-medium border-b border-white pb-0.5 text-right break-all"
+                                    >
+                                        chetanya@iiitm.ac.in
+                                    </a>
+                                    <a
+                                        href={`mailto:${contactPerson.email}`}
+                                        className="!text-white hover:underline transition-colors text-xs font-medium border-b border-white pb-0.5 text-right break-all"
+                                    >
+                                        {contactPerson.email}
+                                    </a>
+                                </div>
                             </div>
 
                             {/* Phone - Bottom Full Width */}
