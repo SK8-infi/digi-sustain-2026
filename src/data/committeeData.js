@@ -38,7 +38,7 @@ export const coordinators = [
         designation: 'Conference Coordinator',
         affiliation: 'ABV-IIITM Gwalior',
         email: 'shishir@iiitm.ac.in',
-        image: null,
+        image: 'https://lh3.googleusercontent.com/d/1GVU1zmpRQVSoewQm4QcYouCHyyNNWpCw',
     },
 ];
 
