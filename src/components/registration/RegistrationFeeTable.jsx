@@ -105,7 +105,7 @@ export default function RegistrationFeeTable() {
                 <div className="bg-white border border-neutral-200 rounded-lg p-6">
                     <div className="flex flex-col md:flex-row items-center gap-8">
                         <img
-                            src="https://lh3.googleusercontent.com/d/173FtO3poN0paJS7Q-Bt7bxObd0lJFHqs"
+                            src="https://lh3.googleusercontent.com/d/138JTkQ4hh7S0s1KLPa6CZcVNCXEz3ahm"
                             alt="Registration and Payment QR Code"
                             className="w-32 h-32 object-cover rounded-lg border border-neutral-200 shrink-0"
                         />
