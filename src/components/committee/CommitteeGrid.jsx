@@ -5,7 +5,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
 
     // White Theme + Dark Text (Default) with conditional Logic
     const cardStyle = isLeadership
-        ? "shadow-lg transition-all duration-300" // Base foundation, colors applied individually
+        ? "shadow-lg" // Base foundation, colors applied individually; no animation
         : "bg-white border border-primary-700 shadow-sm transition-shadow duration-300";
 
     if (layout === 'horizontal') {
@@ -19,12 +19,12 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                     </h3>
                 )}
                 <div
-                    className={`${cardStyle} rounded-3xl p-8 flex flex-col items-center gap-6 text-center max-w-3xl w-full ${isLeadership ? 'bg-gradient-to-br from-teal-600 to-teal-800 border-none shadow-[0_10px_30px_rgba(13,148,136,0.3)] hover:shadow-[0_0_50px_rgba(45,212,191,0.6)]' : 'border-primary-700'}`}
+                    className={`${cardStyle} rounded-3xl p-8 flex flex-col items-center gap-6 text-center max-w-3xl w-full ${isLeadership ? 'bg-gradient-to-br from-teal-600 to-teal-800 border-none shadow-[0_10px_30px_rgba(13,148,136,0.3)]' : 'border-primary-700'}`}
                     style={{ minHeight: '320px' }}
                 >
-                    {/* Centered Image */}
+                    {/* Centered Image - square for leadership */}
                     <div
-                        className={`rounded-full flex items-center justify-center font-bold overflow-hidden shadow-inner flex-shrink-0 ${isLeadership ? 'bg-white/20 text-white border-2 border-white/30 backdrop-blur-sm' : 'bg-primary-50 text-primary-300 border border-primary-100'}`}
+                        className={`flex items-center justify-center font-bold overflow-hidden shadow-inner flex-shrink-0 ${isLeadership ? 'rounded-lg bg-white/20 text-white border-2 border-white/30 backdrop-blur-sm' : 'rounded-full bg-primary-50 text-primary-300 border border-primary-100'}`}
                         style={{
                             width: '180px',
                             height: '180px',
@@ -136,73 +136,105 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                 >
                     {members.map((member, i) => {
                         const index = startIndex + i;
-                        // Leadership styles calculation
+                        // Leadership: static card colors, no hover animation
                         const leadershipColors = [
-                            'bg-gradient-to-br from-teal-500 to-teal-700 shadow-[0_5px_15px_rgba(20,184,166,0.4)] hover:shadow-[0_0_40px_rgba(94,234,212,0.8)] border-teal-400/30', // Vibrant Teal
-                            'bg-gradient-to-br from-cyan-500 to-cyan-700 shadow-[0_5px_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] border-cyan-400/30', // Bright Cyan (Replacing Blue)
-                            'bg-gradient-to-br from-slate-500 to-slate-600 shadow-[0_5px_15px_rgba(100,116,139,0.4)] hover:shadow-[0_0_40px_rgba(148,163,184,0.8)] border-slate-400/30', // Light Bluish Grey (Slate)
-                            'bg-gradient-to-br from-emerald-500 to-emerald-700 shadow-[0_5px_15px_rgba(16,185,129,0.4)] hover:shadow-[0_0_40px_rgba(110,231,183,0.8)] border-emerald-400/30', // Vibrant Green
+                            'from-teal-600 to-teal-800 border-teal-400/30',
+                            'from-cyan-600 to-cyan-800 border-cyan-400/30',
+                            'from-slate-600 to-slate-700 border-slate-400/30',
+                            'from-emerald-600 to-emerald-800 border-emerald-400/30',
                         ];
                         const leadershipStyle = isLeadership ? leadershipColors[index % leadershipColors.length] : '';
 
                         return (
                             <div
                                 key={i}
-                                className={`flex flex-col items-center text-center shadow-sm hover:translate-y-[-4px] w-[47%] lg:w-[320px] flex-shrink-0 lg:flex-none min-w-0 transition-all duration-300
+                                className={`flex flex-col items-center text-center w-[47%] lg:w-[300px] flex-shrink-0 lg:flex-none min-w-0 overflow-hidden
                                 ${isLeadership
-                                        ? `rounded-2xl border ${leadershipStyle} text-white`
-                                        : 'bg-white border border-primary-700 hover:shadow-md overflow-hidden rounded-2xl'
+                                        ? `rounded-2xl border-2 bg-gradient-to-br ${leadershipStyle} shadow-[0_8px_24px_rgba(0,0,0,0.12)]`
+                                        : 'bg-white border border-primary-700 hover:shadow-md transition-shadow duration-300 rounded-2xl'
                                     }`}
                                 style={{
-                                    padding: isLeadership ? '1.5rem 0.5rem' : '1rem 0.25rem',
-                                    gap: '0.5rem',
-                                    minHeight: '220px'
+                                    minHeight: isLeadership ? '280px' : '220px',
+                                    ...(isLeadership ? {} : { padding: '1rem 0.25rem', gap: '0.5rem' })
                                 }}
                             >
-                                {/* Round Image: Relative Size */}
-                                <div
-                                    className={`rounded-full flex items-center justify-center font-semibold shrink-0 overflow-hidden shadow-inner 
-                                    ${isLeadership
-                                            ? 'bg-white/10 text-white border-2 border-white/20'
-                                            : 'bg-primary-50 text-primary-300 border border-primary-100'
-                                        }`}
-                                    style={{
-                                        width: isLeadership ? 'clamp(6rem, 15vw, 9rem)' : 'clamp(2.5rem, 10vw, 6rem)',
-                                        height: isLeadership ? 'clamp(6rem, 15vw, 9rem)' : 'clamp(2.5rem, 10vw, 6rem)',
-                                        fontSize: isLeadership ? '2.5rem' : 'clamp(0.875rem, 2vw, 1.5rem)',
-                                        borderRadius: '50%'
-                                    }}
-                                >
-                                    {member.image ? (
-                                        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                                    ) : (
-                                        getInitials(member.name)
-                                    )}
-                                </div>
-                                <div className="min-w-0 w-full flex flex-col items-center flex-grow">
-                                    <h4
-                                        className={`font-bold mb-1 leading-tight ${isLeadership ? 'text-base md:text-lg !text-white' : 'text-neutral-900 text-xl'}`}
-                                    >
-                                        {member.name}
-                                    </h4>
-                                    {member.affiliation && (
-                                        <p
-                                            className={`leading-snug mb-2 line-clamp-2 ${isLeadership ? '!text-white text-[10px] md:text-xs' : 'text-neutral-500 text-sm'}`}
-                                        >
-                                            {member.affiliation}
-                                        </p>
-                                    )}
-                                    <div className="mt-auto">
-                                        {member.email && (
-                                            <a
-                                                href={`mailto:${member.email}`}
-                                                className={`truncate block hover:underline font-medium ${isLeadership ? '!text-white hover:text-white/90 text-xs' : 'text-primary-600 hover:text-primary-800 text-sm'}`}
+                                {isLeadership ? (
+                                    <>
+                                        {/* Top: gradient + square image + name */}
+                                        <div className={`w-full bg-gradient-to-br ${leadershipStyle} pt-5 px-4 pb-4 flex flex-col items-center gap-3`}>
+                                            <div
+                                                className="rounded-lg flex items-center justify-center font-semibold shrink-0 overflow-hidden bg-white/10 border-2 border-white/20 shadow-inner"
+                                                style={{
+                                                    width: 'clamp(5.5rem, 14vw, 8.5rem)',
+                                                    height: 'clamp(5.5rem, 14vw, 8.5rem)',
+                                                    fontSize: '2rem',
+                                                }}
                                             >
-                                                {member.email}
-                                            </a>
-                                        )}
-                                    </div>
-                                </div>
+                                                {member.image ? (
+                                                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                                                ) : (
+                                                    getInitials(member.name)
+                                                )}
+                                            </div>
+                                            <h4 className="font-bold text-base md:text-lg !text-white leading-tight">
+                                                {member.name}
+                                            </h4>
+                                        </div>
+                                        {/* Bottom: white strip for designation / affiliation */}
+                                        <div className="w-full bg-white py-4 px-3 flex flex-col items-center gap-1 flex-grow">
+                                            {member.designation && (
+                                                <p className="font-bold text-neutral-900 text-sm md:text-base">
+                                                    {member.designation}
+                                                </p>
+                                            )}
+                                            {member.affiliation && (
+                                                <p className="text-neutral-500 text-xs md:text-sm leading-snug line-clamp-2 text-center">
+                                                    {member.affiliation}
+                                                </p>
+                                            )}
+                                            {member.email && (
+                                                <a href={`mailto:${member.email}`} className="truncate text-primary-600 hover:text-primary-800 text-xs font-medium mt-1">
+                                                    {member.email}
+                                                </a>
+                                            )}
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div
+                                            className="rounded-full flex items-center justify-center font-semibold shrink-0 overflow-hidden shadow-inner bg-primary-50 text-primary-300 border border-primary-100"
+                                            style={{
+                                                width: 'clamp(2.5rem, 10vw, 6rem)',
+                                                height: 'clamp(2.5rem, 10vw, 6rem)',
+                                                fontSize: 'clamp(0.875rem, 2vw, 1.5rem)',
+                                                borderRadius: '50%'
+                                            }}
+                                        >
+                                            {member.image ? (
+                                                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                                            ) : (
+                                                getInitials(member.name)
+                                            )}
+                                        </div>
+                                        <div className="min-w-0 w-full flex flex-col items-center flex-grow">
+                                            <h4 className="font-bold mb-1 leading-tight text-neutral-900 text-xl">
+                                                {member.name}
+                                            </h4>
+                                            {member.affiliation && (
+                                                <p className="leading-snug mb-2 line-clamp-2 text-neutral-500 text-sm">
+                                                    {member.affiliation}
+                                                </p>
+                                            )}
+                                            <div className="mt-auto">
+                                                {member.email && (
+                                                    <a href={`mailto:${member.email}`} className="truncate block hover:underline font-medium text-primary-600 hover:text-primary-800 text-sm">
+                                                        {member.email}
+                                                    </a>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         );
                     })}
