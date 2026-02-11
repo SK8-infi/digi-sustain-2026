@@ -59,14 +59,14 @@ export default function RegistrationFeeTable() {
                         {/* Data Row */}
                         <tr>
                             <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>
-                                Academician, Doctoral Students, Faculty, Industry Participants, Delegates
+                                Academician, Doctoral Students, Faculty, Industry Participants, Delegates,UG/PG
                             </td>
                             {/* Online */}
-                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>1500</td>
-                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>17</td>
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>2000</td>
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>22</td>
                             {/* Offline */}
-                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>2500</td>
-                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>28</td>
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>3000</td>
+                            <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>33</td>
                             {/* Journal */}
                             <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>5000</td>
                             <td className="border border-[#1a4731] p-4 text-center font-bold" style={{ backgroundColor: '#ffffff', color: '#000000' }}>55</td>
