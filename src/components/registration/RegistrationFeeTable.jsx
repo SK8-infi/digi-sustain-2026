@@ -92,7 +92,7 @@ export default function RegistrationFeeTable() {
                                 Submit Your Abstract
                             </h3>
                             <p className="text-neutral-600 mb-4">
-                                Scan the QR code below to submit your abstract for consideration.
+                                Scan the QR code to submit your abstract for consideration.
                             </p>
                             <p className="text-sm text-neutral-500">
                                 Abstract word limit: 250 words
