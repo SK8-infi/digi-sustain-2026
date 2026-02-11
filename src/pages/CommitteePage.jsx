@@ -53,7 +53,7 @@ export default function CommitteePage() {
                     </div>
                     <div>
                         <h2 className="text-2xl font-bold text-primary-700 mb-6 text-center">Internal Advisory Board</h2>
-                        <CommitteeGrid members={advisoryBoardFirstLevel} layout="grid" variant="leadership" />
+                        <CommitteeGrid members={advisoryBoardFirstLevel} layout="grid" variant="leadership" columns={3} />
                     </div>
                     <div>
                         <h2 className="text-2xl font-bold text-primary-700 mb-6 text-center">External Advisory Board</h2>

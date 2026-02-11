@@ -77,20 +77,46 @@ export default function RegistrationFeeTable() {
 
             {/* International Registration Note Removed */}
 
-            {/* QR Code Section */}
-            <div className="bg-white border border-neutral-200 rounded-lg p-6">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                    <QRCodePlaceholder className="shrink-0" />
-                    <div className="text-center md:text-left">
-                        <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                            Submit Your Abstract
-                        </h3>
-                        <p className="text-neutral-600 mb-4">
-                            Scan the QR code or click the button below to submit your abstract for consideration.
-                        </p>
-                        <p className="text-sm text-neutral-500">
-                            Abstract word limit: 250 words
-                        </p>
+            {/* QR Codes Section */}
+            <div className="space-y-6">
+                {/* Abstract Submission QR */}
+                <div className="bg-white border border-neutral-200 rounded-lg p-6">
+                    <div className="flex flex-col md:flex-row items-center gap-8">
+                        <img
+                            src="https://lh3.googleusercontent.com/d/1IAXg3UFeGzQmZanW31U71GrO8BUC-9-6"
+                            alt="Registration QR Code"
+                            className="w-32 h-32 object-cover rounded-lg border border-neutral-200 shrink-0"
+                        />
+                        <div className="text-center md:text-left">
+                            <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                                Submit Your Abstract
+                            </h3>
+                            <p className="text-neutral-600 mb-4">
+                                Scan the QR code or click the button below to submit your abstract for consideration.
+                            </p>
+                            <p className="text-sm text-neutral-500">
+                                Abstract word limit: 250 words
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Registration & Payment QR */}
+                <div className="bg-white border border-neutral-200 rounded-lg p-6">
+                    <div className="flex flex-col md:flex-row items-center gap-8">
+                        <img
+                            src="https://lh3.googleusercontent.com/d/173FtO3poN0paJS7Q-Bt7bxObd0lJFHqs"
+                            alt="Registration and Payment QR Code"
+                            className="w-32 h-32 object-cover rounded-lg border border-neutral-200 shrink-0"
+                        />
+                        <div className="text-center md:text-left">
+                            <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                                DIGI-SUSTAIN 2026 Registration & Payment
+                            </h3>
+                            <p className="text-neutral-600">
+                                Scan the QR code for payment and registration
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

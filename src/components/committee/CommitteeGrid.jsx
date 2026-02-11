@@ -32,7 +32,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                         }}
                     >
                         {member.image ? (
-                            <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                            <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                         ) : (
                             getInitials(member.name)
                         )}
@@ -86,7 +86,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                             }}
                         >
                             {member.image ? (
-                                <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                             ) : (
                                 getInitials(member.name)
                             )}
@@ -177,7 +177,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                                                 }}
                                             >
                                                 {member.image ? (
-                                                    <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                                                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                                                 ) : (
                                                     getInitials(member.name)
                                                 )}
@@ -217,7 +217,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                                             }}
                                         >
                                             {member.image ? (
-                                                <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                                                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                                             ) : (
                                                 getInitials(member.name)
                                             )}

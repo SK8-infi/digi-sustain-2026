@@ -56,6 +56,12 @@ export const advisoryBoardFirstLevel = [
         email: null,
         image: 'https://lh3.googleusercontent.com/d/11Dzv9N6tl94Ja3Rs9FWAejm4A9XMtLB3',
     },
+    {
+        name: 'Dr. Arun Kumar',
+        affiliation: 'ABV-IIITM Gwalior',
+        email: null,
+        image: 'https://lh3.googleusercontent.com/d/1qDNWGP2b9boWk8BCGsNGsGW_swM9tbQT',
+    },
 ];
 
 // External Advisory Board
