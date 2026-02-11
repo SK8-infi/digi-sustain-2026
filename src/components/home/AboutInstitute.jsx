@@ -42,8 +42,8 @@ export default function AboutInstitute() {
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl group border border-white/50 bg-white">
                                 <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500" />
                                 <img
-                                    src="https://lh3.googleusercontent.com/d/1OoQlP6Ucwi-7L4Oe_0Sl8TCAu8urbm2w"
-                                    alt="ABV-IIITM Gwalior Campus"
+                                    src="https://lh3.googleusercontent.com/d/1bDYy_ReDauwg-bWK_cXmcHeNcSC7EWVh"
+                                    alt="ABV-IIITM Gwalior"
                                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
@@ -67,7 +67,7 @@ export default function AboutInstitute() {
                                 <div className="relative rounded-2xl overflow-hidden shadow-2xl group border border-white/50 bg-white">
                                     <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500" />
                                     <img
-                                        src="https://lh3.googleusercontent.com/d/1AczsTl9ZAEC0j4xj6NSey5ml9YsMBISh"
+                                        src="https://lh3.googleusercontent.com/d/1DvEi1hmZI1eS1F6SfG1S3o_Teb4weYhn"
                                         alt="Department of Management Studies"
                                         className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                                     />

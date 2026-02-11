@@ -8,7 +8,7 @@ const carouselImages = [
     { id: 1, url: 'https://lh3.googleusercontent.com/d/1OoQlP6Ucwi-7L4Oe_0Sl8TCAu8urbm2w', alt: 'Conference venue' },
     { id: 2, url: 'https://lh3.googleusercontent.com/d/1AczsTl9ZAEC0j4xj6NSey5ml9YsMBISh', alt: 'Academic session' },
     { id: 3, url: 'https://lh3.googleusercontent.com/d/1sWTOeNuVDQxUhysQfr9DS6z9aJ5Lypj5', alt: 'Research presentation' },
-    { id: 4, url: 'https://lh3.googleusercontent.com/d/1VLlXYXdBr70atzRCrsMBGfmu9E0fOruO', alt: 'Networking event' },
+    { id: 4, url: 'https://lh3.googleusercontent.com/d/1bDYy_ReDauwg-bWK_cXmcHeNcSC7EWVh', alt: 'ABV-IIITM Gwalior' },
 ];
 
 export default function HeroSection({
