@@ -24,7 +24,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                 >
                     {/* Centered Image - square for leadership */}
                     <div
-                        className={`flex items-center justify-center font-bold overflow-hidden shadow-inner flex-shrink-0 ${isLeadership ? 'rounded-lg bg-white/20 text-white border-2 border-white/30 backdrop-blur-sm' : 'rounded-full bg-primary-50 text-primary-300 border border-primary-100'}`}
+                        className={`flex items-center justify-center font-bold overflow-hidden shadow-inner flex-shrink-0 ${isLeadership ? 'rounded-lg bg-white/20 text-white border-2 border-white/30' : 'rounded-full bg-primary-50 text-primary-300 border border-primary-100'}`}
                         style={{
                             width: '220px',
                             height: '220px',
@@ -32,7 +32,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                         }}
                     >
                         {member.image ? (
-                            <img src={member.image} alt={member.name} className="w-full h-full object-contain" loading="lazy" decoding="async" />
+                            <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
                         ) : (
                             getInitials(member.name)
                         )}
@@ -86,7 +86,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                             }}
                         >
                             {member.image ? (
-                                <img src={member.image} alt={member.name} className="w-full h-full object-contain" loading="lazy" decoding="async" />
+                                <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
                             ) : (
                                 getInitials(member.name)
                             )}
@@ -134,9 +134,9 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                             ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 justify-items-center'
                             : 'flex flex-wrap justify-center'
                     }
-                    style={columns === 2 || columns === 3 ? {} : {
-                        gap: 'clamp(0.5rem, 2vw, 1.5rem)',
-                        width: '100%'
+                    style={{
+                        contain: 'layout paint',
+                        ...(columns !== 2 && columns !== 3 ? { gap: 'clamp(0.5rem, 2vw, 1.5rem)', width: '100%' } : {})
                     }}
                 >
                     {members.map((member, i) => {
@@ -177,7 +177,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                                                 }}
                                             >
                                                 {member.image ? (
-                                                    <img src={member.image} alt={member.name} className="w-full h-full object-contain" loading="lazy" decoding="async" />
+                                                    <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
                                                 ) : (
                                                     getInitials(member.name)
                                                 )}
@@ -217,7 +217,7 @@ export default function CommitteeGrid({ title, members, layout = 'grid', variant
                                             }}
                                         >
                                             {member.image ? (
-                                                <img src={member.image} alt={member.name} className="w-full h-full object-contain" loading="lazy" decoding="async" />
+                                                <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
                                             ) : (
                                                 getInitials(member.name)
                                             )}
