@@ -14,7 +14,7 @@ export const conferenceChairs = [
         designation: 'Conference Chair',
         affiliation: 'ABV-IIITM Gwalior',
         email: 'gaurav@iiitm.ac.in',
-        image: 'https://lh3.googleusercontent.com/d/1hNST483PTaQXmJ3B0VUmBzQ4otb8TUYh',
+        image: 'https://lh3.googleusercontent.com/d/1pMPCnI8iWBtutYS7w17aYpeeWsLlQuJ8',
     },
     {
         name: 'Dr. Manoj kumar Dash',

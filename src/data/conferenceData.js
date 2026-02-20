@@ -3,8 +3,8 @@ export const conferenceInfo = {
     shortTitle: 'DIGI-SUSTAIN 2026',
     fullTitle: 'International Conference on Digital Transformative Practices for a Sustainable Future',
     theme: 'Technology for Viksit Bharat 2047: Digital Innovation, Sustainability, and Inclusive Growth',
-    dates: '15th – 17th May 2026',
-    doctoralColloquiumDate: '15th May 2026',
+    dates: '13th – 15th May 2026',
+
     venue: {
         name: 'Atal Bihari Vajpayee – Indian Institute of Information Technology and Management (ABV-IIITM)',
         shortName: 'ABV-IIITM Gwalior',
@@ -44,8 +44,8 @@ export const importantDates = [
         isDeadline: true,
     },
     {
-        activity: 'Conference Dates & Doctoral Colloquium',
-        date: '15–17 May 2026',
+        activity: 'Conference Dates (includes Doctoral Colloquium)',
+        date: '13–15 May 2026',
         isDeadline: false,
     },
 ];
