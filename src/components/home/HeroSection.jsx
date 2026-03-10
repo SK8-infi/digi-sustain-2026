@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { conferenceInfo } from '../../data/conferenceData';
 import { ROUTES } from '../../constants/routes';
+import { HERO_IMAGE_1, HERO_IMAGE_2, HERO_IMAGE_3, HERO_IMAGE_4 } from '../../assets/assetConstants';
 
 // Carousel images - Strictly 4 images as requested
 const carouselImages = [
-    { id: 1, url: 'https://lh3.googleusercontent.com/d/1OoQlP6Ucwi-7L4Oe_0Sl8TCAu8urbm2w', alt: 'Conference venue' },
-    { id: 2, url: 'https://lh3.googleusercontent.com/d/1AczsTl9ZAEC0j4xj6NSey5ml9YsMBISh', alt: 'Academic session' },
-    { id: 3, url: 'https://lh3.googleusercontent.com/d/1sWTOeNuVDQxUhysQfr9DS6z9aJ5Lypj5', alt: 'Research presentation' },
-    { id: 4, url: 'https://lh3.googleusercontent.com/d/1bDYy_ReDauwg-bWK_cXmcHeNcSC7EWVh', alt: 'ABV-IIITM Gwalior' },
+    { id: 1, url: HERO_IMAGE_1, alt: 'Conference venue' },
+    { id: 2, url: HERO_IMAGE_2, alt: 'Academic session' },
+    { id: 3, url: HERO_IMAGE_3, alt: 'Research presentation' },
+    { id: 4, url: HERO_IMAGE_4, alt: 'ABV-IIITM Gwalior' },
 ];
 
 export default function HeroSection({

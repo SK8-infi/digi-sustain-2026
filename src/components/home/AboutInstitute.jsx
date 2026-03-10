@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 import SectionContainer from '../ui/SectionContainer';
 import Card, { CardTitle, CardDescription } from '../ui/Card';
+import { INSTITUTE_IMAGE, DOMS_IMAGE } from '../../assets/assetConstants';
 
 export default function AboutInstitute() {
     return (
@@ -42,9 +43,10 @@ export default function AboutInstitute() {
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl group border border-white/50 bg-white">
                                 <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500" />
                                 <img
-                                    src="https://lh3.googleusercontent.com/d/1bDYy_ReDauwg-bWK_cXmcHeNcSC7EWVh"
+                                    src={INSTITUTE_IMAGE}
                                     alt="ABV-IIITM Gwalior"
                                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    loading="lazy"
                                 />
                             </div>
                         </div>
@@ -67,9 +69,10 @@ export default function AboutInstitute() {
                                 <div className="relative rounded-2xl overflow-hidden shadow-2xl group border border-white/50 bg-white">
                                     <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500" />
                                     <img
-                                        src="https://lh3.googleusercontent.com/d/1DvEi1hmZI1eS1F6SfG1S3o_Teb4weYhn"
+                                        src={DOMS_IMAGE}
                                         alt="Department of Management Studies"
                                         className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                        loading="lazy"
                                     />
                                 </div>
                             </div>

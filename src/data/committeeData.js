@@ -1,3 +1,21 @@
+import {
+    IMG_PATRON,
+    IMG_CHAIR_GAURAV,
+    IMG_CHAIR_MANOJ,
+    IMG_COORD_CHETANYA,
+    IMG_COORD_SHISHIR,
+    IMG_ADVISORY_RAJENDRA,
+    IMG_ADVISORY_MANOJ,
+    IMG_ADVISORY_ARUN,
+    IMG_ADVISORY_EXT_ANIL,
+    IMG_ADVISORY_EXT_SATYABHUSAN,
+    IMG_ADVISORY_EXT_PRASHANT,
+    IMG_EDITORIAL_PRASHANT,
+    IMG_EDITORIAL_ROHIT,
+    IMG_EDITORIAL_JISHNU,
+    IMG_EDITORIAL_SACHIN
+} from '../assets/assetConstants';
+
 // Committee data - DIGI-SUSTAIN 2026 (aligned with leadership reference)
 
 export const patron = {
@@ -5,7 +23,7 @@ export const patron = {
     designation: 'Patron',
     affiliation: 'ABV-IIITM Gwalior',
     email: null,
-    image: 'https://lh3.googleusercontent.com/d/19g0IMaYvjJ4p5FAnxdeqh5NHfrNIDvBX',
+    image: IMG_PATRON,
 };
 
 export const conferenceChairs = [
@@ -14,14 +32,14 @@ export const conferenceChairs = [
         designation: 'Conference Chair',
         affiliation: 'ABV-IIITM Gwalior',
         email: 'gaurav@iiitm.ac.in',
-        image: 'https://lh3.googleusercontent.com/d/1pMPCnI8iWBtutYS7w17aYpeeWsLlQuJ8',
+        image: IMG_CHAIR_GAURAV,
     },
     {
         name: 'Dr. Manoj kumar Dash',
         designation: 'Conference Chair',
         affiliation: 'ABV-IIITM Gwalior',
         email: 'manojdash@iiitm.ac.in',
-        image: 'https://lh3.googleusercontent.com/d/1jH4xgbItuHEg18KlWiUaa7njLNXkOqse',
+        image: IMG_CHAIR_MANOJ,
     },
 ];
 
@@ -31,14 +49,14 @@ export const coordinators = [
         designation: 'Conference Coordinator',
         affiliation: 'ABV-IIITM Gwalior',
         email: 'chetanya@iiitm.ac.in',
-        image: 'https://lh3.googleusercontent.com/d/1S3P8qpsI2kdCuHIr7UyRMvzQTUAyGf5S',
+        image: IMG_COORD_CHETANYA,
     },
     {
         name: 'Mr. Shishir Srivastava',
         designation: 'Conference Coordinator',
         affiliation: 'ABV-IIITM Gwalior',
         email: 'shishir@iiitm.ac.in',
-        image: 'https://lh3.googleusercontent.com/d/1GVU1zmpRQVSoewQm4QcYouCHyyNNWpCw',
+        image: IMG_COORD_SHISHIR,
     },
 ];
 
@@ -48,19 +66,19 @@ export const advisoryBoardFirstLevel = [
         name: 'Prof. Rajendra Sahu',
         affiliation: 'ABV-IIITM Gwalior',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/1EPu6_ogIv5cA3ADsBQlHckotV9z3N5-o',
+        image: IMG_ADVISORY_RAJENDRA,
     },
     {
         name: 'Prof. Manoj Patwardhan',
         affiliation: 'ABV-IIITM Gwalior',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/11Dzv9N6tl94Ja3Rs9FWAejm4A9XMtLB3',
+        image: IMG_ADVISORY_MANOJ,
     },
     {
         name: 'Dr. Arun Kumar',
         affiliation: 'ABV-IIITM Gwalior',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/1qDNWGP2b9boWk8BCGsNGsGW_swM9tbQT',
+        image: IMG_ADVISORY_ARUN,
     },
 ];
 
@@ -70,19 +88,19 @@ export const advisoryBoardSecondLevel = [
         name: 'Prof. Anil Kumar',
         affiliation: 'London Metropolitan University',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/1HBw2eojmLhhZoZCxbGUAN_PfIILKi-P1',
+        image: IMG_ADVISORY_EXT_ANIL,
     },
     {
         name: 'Prof. Satyabhusan Dash',
         affiliation: 'IIM Lucknow',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/1tyIyOwRXFQ3cSm_mNDfXXlyXpMCzEeZL',
+        image: IMG_ADVISORY_EXT_SATYABHUSAN,
     },
     {
         name: 'Prof. Prashant Gupta',
         affiliation: 'IIM Nagpur',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/1hzyKoR7Pfvn9dw5NLYztFXLRvSj-MabQ',
+        image: IMG_ADVISORY_EXT_PRASHANT,
     },
 ];
 
@@ -92,25 +110,25 @@ export const editorialBoardFirstLevel = [
         name: 'Prof. Prashant Sharma',
         affiliation: 'O.P. Jindal Global University',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/19cLx0De6Fw3P2kEhcfJP46klKcPOdCeI',
+        image: IMG_EDITORIAL_PRASHANT,
     },
     {
         name: 'Dr. Rohit Kumar Singh',
         affiliation: 'IMI Kolkata',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/1lh_6WMLVnyttvC-4fk1at8SBQvDg7C5h',
+        image: IMG_EDITORIAL_ROHIT,
     },
     {
         name: 'Dr. Jishnu Bhattacharyya',
         affiliation: 'Swansea University, UK',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/1OSG8U-yEQTwlDoWEVVW9Ltv6fnTjuVNI',
+        image: IMG_EDITORIAL_JISHNU,
     },
     {
         name: 'Dr. Sachin Modgil',
         affiliation: 'IMI Kolkata',
         email: null,
-        image: 'https://lh3.googleusercontent.com/d/1ldGIvOuIbUmPKBSN8l7XC6gUItuE9Xa-',
+        image: IMG_EDITORIAL_SACHIN,
     },
 ];
 

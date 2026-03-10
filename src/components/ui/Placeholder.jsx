@@ -16,6 +16,7 @@ export default function Placeholder({
                 src={src}
                 alt={alt || label}
                 className={`w-full h-full object-cover ${className}`}
+                loading="lazy"
             />
         );
     }

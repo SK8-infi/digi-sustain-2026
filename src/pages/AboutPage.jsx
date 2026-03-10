@@ -1,8 +1,8 @@
 import { introContent } from '../data/conferenceData';
 import SectionContainer, { SectionHeader } from '../components/ui/SectionContainer';
 import Card from '../components/ui/Card';
-
 import HeroSection from '../components/home/HeroSection';
+import { CONFERENCE_LOGO } from '../assets/assetConstants';
 
 export default function AboutPage() {
     return (
@@ -18,9 +18,10 @@ export default function AboutPage() {
                 {/* Watermark */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] opacity-[0.08] pointer-events-none select-none z-0">
                     <img
-                        src="https://lh3.googleusercontent.com/d/1cgyYIX8AHiYkGObDopNy3e1NUiK-22kJ"
+                        src={CONFERENCE_LOGO}
                         alt="Watermark"
                         className="w-full h-full object-contain"
+                        loading="lazy"
                     />
                 </div>
 

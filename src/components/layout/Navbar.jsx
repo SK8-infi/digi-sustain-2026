@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { NAV_ITEMS, ROUTES } from '../../constants/routes';
 import NavLinks from './NavLinks';
+import { INSTITUTE_LOGO, CONFERENCE_LOGO } from '../../assets/assetConstants';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,9 +43,10 @@ export default function Navbar() {
                     <div className="w-10 sm:w-14 flex-shrink-0 flex justify-start">
                         <div className="bg-white rounded-full p-[3px] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg">
                             <img
-                                src="https://lh3.googleusercontent.com/d/1LNtqXOXfvsyYZaclWSc2QM-yzpxov1vw"
+                                src={INSTITUTE_LOGO}
                                 alt="ABV-IIITM Gwalior Logo"
                                 className="w-full h-full object-contain"
+                                loading="lazy"
                             />
                         </div>
                     </div>
@@ -75,9 +77,10 @@ export default function Navbar() {
                         <div className="flex-shrink-0 flex items-center gap-3 mr-4 lg:mr-8">
                             <div className="w-10 h-10 rounded-full border-2 border-[#1a4731]/10 overflow-hidden bg-white shadow-sm p-0.5">
                                 <img
-                                    src="https://lh3.googleusercontent.com/d/1cgyYIX8AHiYkGObDopNy3e1NUiK-22kJ"
+                                    src={CONFERENCE_LOGO}
                                     alt="DIGI-SUSTAIN 2026"
                                     className="w-full h-full object-cover rounded-full"
+                                    loading="lazy"
                                 />
                             </div>
                             <span className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 font-bold text-[#1a4731] text-xl md:text-2xl tracking-tight whitespace-nowrap pt-1 lg:pt-0">DIGI-SUSTAIN 2026</span>

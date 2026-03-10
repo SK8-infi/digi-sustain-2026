@@ -1,6 +1,7 @@
 import HeroSection from '../components/home/HeroSection';
 import IntroSection from '../components/home/IntroSection';
 import AboutInstitute from '../components/home/AboutInstitute';
+import { PARTNER_CONFERENCE_ALERTS_1, PARTNER_CONFERENCE_ALERTS_2 } from '../assets/assetConstants';
 
 export default function HomePage() {
     return (
@@ -23,9 +24,10 @@ export default function HomePage() {
                         <div className="flex flex-col items-center max-w-xs">
                             <div className="h-16 md:h-20 flex items-center justify-center mb-4">
                                 <img
-                                    src="https://lh3.googleusercontent.com/d/1EZkUtrVHx3MS8_KzFOnxZla0BKW3yTcx"
+                                    src={PARTNER_CONFERENCE_ALERTS_1}
                                     alt="All Conference Alert"
                                     className="max-h-full w-auto object-contain"
+                                    loading="lazy"
                                 />
                             </div>
                             <h3 className="text-base md:text-lg font-bold text-neutral-900 mb-2">Conference Alerts</h3>
@@ -43,9 +45,10 @@ export default function HomePage() {
                         <div className="flex flex-col items-center max-w-xs">
                             <div className="h-16 md:h-20 flex items-center justify-center mb-4">
                                 <img
-                                    src="https://lh3.googleusercontent.com/d/1x-B4KOIIS8EnWVzuS7EFFISIeaKlaxlB"
+                                    src={PARTNER_CONFERENCE_ALERTS_2}
                                     alt="Conference Alerts India"
                                     className="max-h-full w-auto object-contain"
+                                    loading="lazy"
                                 />
                             </div>
                             <h3 className="text-base md:text-lg font-bold text-neutral-900 mb-2">Conference Alerts</h3>

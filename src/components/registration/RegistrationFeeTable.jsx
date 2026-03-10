@@ -1,5 +1,6 @@
 import { feeStructure, internationalNote, registrationCategories, registrationNote } from '../../data/registrationData';
 import { QRCodePlaceholder } from '../ui/Placeholder';
+import { QR_ABSTRACT, QR_PAYMENT } from '../../assets/assetConstants';
 
 export default function RegistrationFeeTable() {
     return (
@@ -83,9 +84,10 @@ export default function RegistrationFeeTable() {
                 <div className="bg-white border border-neutral-200 rounded-lg p-6">
                     <div className="flex flex-col md:flex-row items-center gap-8">
                         <img
-                            src="https://lh3.googleusercontent.com/d/1IAXg3UFeGzQmZanW31U71GrO8BUC-9-6"
+                            src={QR_ABSTRACT}
                             alt="Registration QR Code"
                             className="w-32 h-32 object-cover rounded-lg border border-neutral-200 shrink-0"
+                            loading="lazy"
                         />
                         <div className="text-center md:text-left">
                             <h3 className="text-lg font-semibold text-neutral-900 mb-2">
@@ -105,9 +107,10 @@ export default function RegistrationFeeTable() {
                 <div className="bg-white border border-neutral-200 rounded-lg p-6">
                     <div className="flex flex-col md:flex-row items-center gap-8">
                         <img
-                            src="https://lh3.googleusercontent.com/d/138JTkQ4hh7S0s1KLPa6CZcVNCXEz3ahm"
+                            src={QR_PAYMENT}
                             alt="Registration and Payment QR Code"
                             className="w-32 h-32 object-cover rounded-lg border border-neutral-200 shrink-0"
+                            loading="lazy"
                         />
                         <div className="text-center md:text-left">
                             <h3 className="text-lg font-semibold text-neutral-900 mb-2">

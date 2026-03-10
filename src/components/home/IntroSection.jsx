@@ -3,6 +3,7 @@ import { introContent, importantDates } from '../../data/conferenceData';
 import { ROUTES } from '../../constants/routes';
 import SectionContainer, { SectionHeader } from '../ui/SectionContainer';
 import Button from '../ui/Button';
+import { POSTER_IMAGE } from '../../assets/assetConstants';
 
 export default function IntroSection() {
     // Get first 3 important dates for preview
@@ -51,9 +52,10 @@ export default function IntroSection() {
                         <div className="absolute -inset-2 bg-white/40 rounded-[2rem] backdrop-blur-sm" />
 
                         <img
-                            src="https://lh3.googleusercontent.com/d/1qzkUJ3NWxHbdllW1Hd5Sp6N5bpSAM9sn"
+                            src={POSTER_IMAGE}
                             alt="Developed India Mission 1947-2047"
                             className="relative rounded-2xl shadow-xl w-full h-auto object-contain border border-white/50 bg-white"
+                            loading="lazy"
                         />
                     </div>
                 </div>
