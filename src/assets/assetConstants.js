@@ -43,3 +43,6 @@ export const IMG_EDITORIAL_SACHIN = 'https://lh3.googleusercontent.com/d/1ldGIvO
 // QR Codes
 export const QR_ABSTRACT = 'https://lh3.googleusercontent.com/d/1IAXg3UFeGzQmZanW31U71GrO8BUC-9-6';
 export const QR_PAYMENT = 'https://lh3.googleusercontent.com/d/138JTkQ4hh7S0s1KLPa6CZcVNCXEz3ahm';
+
+// Conclave
+export const IMG_CONCLAVE_MOHUA = 'https://lh3.googleusercontent.com/d/1Kf7jN9JnKv4oQocBM-C9hXGY3VkvrEAT';

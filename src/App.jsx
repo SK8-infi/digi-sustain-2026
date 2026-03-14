@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage';
 import TracksPage from './pages/TracksPage';
 import ImportantDatesPage from './pages/ImportantDatesPage';
 import DoctoralColloquiumPage from './pages/DoctoralColloquiumPage';
+import ConclavePage from './pages/ConclavePage';
 import JournalsPage from './pages/JournalsPage';
 import RegistrationPage from './pages/RegistrationPage';
 import CommitteePage from './pages/CommitteePage';
@@ -23,6 +24,7 @@ export default function App() {
           <Route path={ROUTES.TRACKS} element={<TracksPage />} />
           <Route path={ROUTES.IMPORTANT_DATES} element={<ImportantDatesPage />} />
           <Route path={ROUTES.DOCTORAL_COLLOQUIUM} element={<DoctoralColloquiumPage />} />
+          <Route path={ROUTES.CONCLAVE} element={<ConclavePage />} />
           <Route path={ROUTES.JOURNALS} element={<JournalsPage />} />
           <Route path={ROUTES.REGISTRATION} element={<RegistrationPage />} />
           <Route path={ROUTES.COMMITTEE} element={<CommitteePage />} />
