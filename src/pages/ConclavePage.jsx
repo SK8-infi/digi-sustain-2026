@@ -14,11 +14,7 @@ export default function ConclavePage() {
             <SectionContainer background="white">
                 <div className="mb-8">
                     <SectionHeader title="Directors' Conclave" />
-                    <div className="max-w-4xl mx-auto text-center mb-10">
-                        <p className="text-xl text-gray-700">
-                            Received acceptance from <strong>Dr. Mohua Banerjee</strong>, Director, IMI Kolkata to participate in the Directors’ Conclave.
-                        </p>
-                    </div>
+
                     <div className="max-w-6xl mx-auto mb-10">
                         <CommitteeGrid members={directorsConclaveSpeaker} layout="horizontal" variant="leadership" />
                     </div>
