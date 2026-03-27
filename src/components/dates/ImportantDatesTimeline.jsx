@@ -77,6 +77,7 @@ export default function ImportantDatesTimeline() {
 function HexagonItem({ item, index, color }) {
     const isEven = index % 2 === 0;
     const { day, month } = parseDate(item.date);
+    const oldDateParsed = item.oldDate ? parseDate(item.oldDate) : null;
     // Reduced spacing
     const verticalOffset = index !== 0 ? 'mt-6 md:mt-10' : '';
 
@@ -103,10 +104,15 @@ function HexagonItem({ item, index, color }) {
                         <div className="absolute top-0 inset-x-0 h-1 bg-white/20"></div>
 
                         <div className="relative z-10 text-white text-center transform transition-transform group-hover:scale-105">
+                            {oldDateParsed && (
+                                <div className="opacity-40 line-through mb-0.5 font-bold" style={{ fontSize: 'clamp(0.45rem, 1.25vw, 0.65rem)' }}>
+                                    {oldDateParsed.day} {oldDateParsed.month}
+                                </div>
+                            )}
                             {/* Fluid Typography: clamp(min, preferred, max) */}
-                            <div className="font-black leading-none tracking-tighter drop-shadow-sm" style={{ fontSize: day === 'ROLLING' ? 'clamp(0.75rem, 2vw, 1.25rem)' : 'clamp(1.25rem, 4vw, 1.875rem)' }}>{day}</div>
+                            <div className="font-black leading-none tracking-tighter drop-shadow-sm" style={{ fontSize: day === 'ROLLING' ? 'clamp(0.75rem, 2vw, 1.25rem)' : 'clamp(1.15rem, 3.5vw, 1.75rem)' }}>{day}</div>
                             {/* Fluid Typography for Month */}
-                            <div className="font-bold uppercase mt-0.5 tracking-widest opacity-90 border-t border-white/30 pt-0.5 mx-2 md:mx-3" style={{ fontSize: 'clamp(0.5rem, 1.5vw, 0.75rem)' }}>{month}</div>
+                            <div className="font-bold uppercase mt-0.5 tracking-widest opacity-90 border-t border-white/30 pt-0.5 mx-2 md:mx-3" style={{ fontSize: 'clamp(0.45rem, 1.25vw, 0.65rem)' }}>{month}</div>
                         </div>
                     </div>
 
@@ -148,9 +154,16 @@ function ContentCard({ item, color, align }) {
                         <div className={`h-0.5 w-6 md:w-8 rounded-full opacity-30 ${color.text.replace('text-', 'bg-')}`}></div>
 
                         {/* Fluid Typography for Date */}
-                        <p className="font-semibold tracking-wide opacity-80" style={{ fontSize: 'clamp(0.5625rem, 1.5vw, 0.75rem)' }}>
-                            {item.date}
-                        </p>
+                        <div className="flex flex-col" style={{ fontSize: 'clamp(0.5625rem, 1.5vw, 0.75rem)' }}>
+                            {item.oldDate && (
+                                <p className="font-semibold tracking-wide opacity-50 line-through">
+                                    {item.oldDate}
+                                </p>
+                            )}
+                            <p className="font-semibold tracking-wide opacity-80">
+                                {item.date}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

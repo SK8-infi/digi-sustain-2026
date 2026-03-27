@@ -30,7 +30,8 @@ export const aboutInstitute = {
 export const importantDates = [
     {
         activity: 'Submission of Abstract (250 words)',
-        date: '31 March 2026',
+        date: '30 April 2026',
+        oldDate: '31 March 2026',
         isDeadline: true,
     },
     {
@@ -50,7 +51,7 @@ export const importantDates = [
     },
 ];
 
-export const abstractBookNote = 'Submissions received by registered authors by 31 March 2026 will be included in a Book of Abstracts with ISBN.';
+export const abstractBookNote = 'Submissions received by registered authors by 30 April 2026 will be included in a Book of Abstracts with ISBN.';
 
 export const doctoralColloquiumHighlights = [
     {
