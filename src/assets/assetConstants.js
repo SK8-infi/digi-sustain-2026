@@ -41,7 +41,7 @@ export const IMG_EDITORIAL_JISHNU = 'https://lh3.googleusercontent.com/d/1OSG8U-
 export const IMG_EDITORIAL_SACHIN = 'https://lh3.googleusercontent.com/d/1ldGIvOuIbUmPKBSN8l7XC6gUItuE9Xa-';
 
 // QR Codes
-export const QR_ABSTRACT = 'https://lh3.googleusercontent.com/d/1IAXg3UFeGzQmZanW31U71GrO8BUC-9-6';
+export const QR_ABSTRACT = 'https://lh3.googleusercontent.com/d/1dzEIi_hyHl986c0zEtRZf_yRnfX0jDq2';
 export const QR_PAYMENT = 'https://lh3.googleusercontent.com/d/138JTkQ4hh7S0s1KLPa6CZcVNCXEz3ahm';
 
 // Conclave
