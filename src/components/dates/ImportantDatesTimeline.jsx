@@ -155,6 +155,11 @@ function ContentCard({ item, color, align }) {
 
                         {/* Fluid Typography for Date */}
                         <div className="flex flex-col" style={{ fontSize: 'clamp(0.5625rem, 1.5vw, 0.75rem)' }}>
+                            {item.isExtended && (
+                                <p className="font-bold uppercase tracking-wider text-emerald-700">
+                                    Extended
+                                </p>
+                            )}
                             {item.oldDate && (
                                 <p className="font-semibold tracking-wide opacity-50 line-through">
                                     {item.oldDate}

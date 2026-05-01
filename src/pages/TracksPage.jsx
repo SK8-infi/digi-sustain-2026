@@ -50,7 +50,7 @@ export default function TracksPage() {
                         Ready to Submit Your Research?
                     </h2>
                     <p className="text-base sm:text-lg text-primary-700 mb-8 max-w-2xl mx-auto">
-                        Abstract submissions are welcome until 30 April 2026. All accepted abstracts will be included in the Book of Abstracts with ISBN.
+                        Abstract submissions are welcome until 7 May 2026. All accepted abstracts will be included in the Book of Abstracts with ISBN.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button to={ROUTES.REGISTRATION} variant="primary" size="lg">
