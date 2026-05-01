@@ -32,7 +32,6 @@ export const importantDates = [
         activity: 'Submission of Abstract (250 words)',
         date: '7 May 2026',
         oldDate: '31 March 2026',
-        isExtended: true,
         isDeadline: true,
     },
     {
@@ -43,7 +42,6 @@ export const importantDates = [
     {
         activity: 'Submission of Full Paper (Optional)',
         date: '7 May 2026',
-        isExtended: true,
         isDeadline: true,
     },
     {
