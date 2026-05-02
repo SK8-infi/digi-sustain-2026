@@ -35,7 +35,13 @@ export default function IntroSection() {
                     </div>
 
                     <div className="pt-6 flex flex-wrap gap-5 justify-start">
-                        <Button href="https://drive.google.com/file/d/1oMBTVFy651psrSf6nxcLp0hu0xMMXi-D/view?usp=sharing" variant="primary" size="lg" className="shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                        <Button
+                            href="/digi-sustain-2026-brochure.pdf"
+                            download="DIGI-SUSTAIN-2026-brochure.pdf"
+                            variant="primary"
+                            size="lg"
+                            className="shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                        >
                             Download Brochure
                         </Button>
                         <Button to={ROUTES.ABOUT} variant="outline" size="lg" className="hover:bg-primary-50">
