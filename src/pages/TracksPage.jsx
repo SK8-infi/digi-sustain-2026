@@ -50,6 +50,8 @@ export default function TracksPage() {
                         Ready to Submit Your Research?
                     </h2>
                     <p className="text-base sm:text-lg text-primary-700 mb-8 max-w-2xl mx-auto">
+                        Abstract or full paper submissions and registrations are welcome till 7th May 2026.
+                        <br />
                         All accepted abstract by registered authors will be included in Conference Book of abstracts with ISBN.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
