@@ -29,29 +29,30 @@ export const aboutInstitute = {
 
 export const importantDates = [
     {
-        activity: 'Submission of Abstract (250 words)',
+        activity: 'Submission of abstract (250 words) or full paper (optional)',
         date: '7 May 2026',
         oldDate: '31 March 2026',
         isDeadline: true,
     },
     {
-        activity: 'Intimation of Acceptance of Abstract',
+        activity: 'Intimation of acceptance of abstract or full paper',
         date: 'Rolling basis',
         isDeadline: false,
     },
     {
-        activity: 'Submission of Full Paper (Optional)',
+        activity: 'Registration for conference',
         date: '7 May 2026',
         isDeadline: true,
     },
     {
-        activity: 'Conference Dates (includes Doctoral Colloquium)',
+        activity: 'Conference dates (includes doctoral colloquium)',
         date: '13–15 May 2026',
         isDeadline: false,
     },
 ];
 
-export const abstractBookNote = 'Submissions received by registered authors by 7 May 2026 will be included in a Book of Abstracts with ISBN.';
+export const abstractBookNote =
+    'All accepted abstract by registered authors will be included in Conference Book of abstracts with ISBN.';
 
 export const doctoralColloquiumHighlights = [
     {
